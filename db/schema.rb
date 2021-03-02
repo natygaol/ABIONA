@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_02_162158) do
+ActiveRecord::Schema.define(version: 2021_03_02_171721) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,6 +64,34 @@ ActiveRecord::Schema.define(version: 2021_03_02_162158) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "trip_stop_activities", force: :cascade do |t|
+    t.bigint "trip_stop_id", null: false
+    t.bigint "activity_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["activity_id"], name: "index_trip_stop_activities_on_activity_id"
+    t.index ["trip_stop_id"], name: "index_trip_stop_activities_on_trip_stop_id"
+  end
+
+  create_table "trip_stops", force: :cascade do |t|
+    t.integer "nights"
+    t.bigint "trip_id", null: false
+    t.bigint "accommodation_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["accommodation_id"], name: "index_trip_stops_on_accommodation_id"
+    t.index ["trip_id"], name: "index_trip_stops_on_trip_id"
+  end
+
+  create_table "trip_styles", force: :cascade do |t|
+    t.bigint "trip_id", null: false
+    t.bigint "travel_style_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["travel_style_id"], name: "index_trip_styles_on_travel_style_id"
+    t.index ["trip_id"], name: "index_trip_styles_on_trip_id"
+  end
+
   create_table "trips", force: :cascade do |t|
     t.date "start_date"
     t.date "end_date"
@@ -95,5 +123,11 @@ ActiveRecord::Schema.define(version: 2021_03_02_162158) do
   add_foreign_key "sample_itinerary_travel_styles", "travel_styles"
   add_foreign_key "stops", "accommodations"
   add_foreign_key "stops", "sample_itineraries"
+  add_foreign_key "trip_stop_activities", "activities"
+  add_foreign_key "trip_stop_activities", "trip_stops"
+  add_foreign_key "trip_stops", "accommodations"
+  add_foreign_key "trip_stops", "trips"
+  add_foreign_key "trip_styles", "travel_styles"
+  add_foreign_key "trip_styles", "trips"
   add_foreign_key "trips", "users"
 end
