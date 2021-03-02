@@ -1,0 +1,2 @@
+class TravelStyle < ApplicationRecord
+end
