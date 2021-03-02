@@ -10,15 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2021_03_02_152836) do
+ActiveRecord::Schema.define(version: 2021_03_02_162158) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "accommodations", force: :cascade do |t|
     t.string "name"
-    t.string "category"
+    t.integer "category"
     t.string "description"
     t.string "address"
     t.datetime "created_at", precision: 6, null: false
@@ -73,6 +72,8 @@ ActiveRecord::Schema.define(version: 2021_03_02_152836) do
     t.boolean "sent"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_trips_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -94,4 +95,5 @@ ActiveRecord::Schema.define(version: 2021_03_02_152836) do
   add_foreign_key "sample_itinerary_travel_styles", "travel_styles"
   add_foreign_key "stops", "accommodations"
   add_foreign_key "stops", "sample_itineraries"
+  add_foreign_key "trips", "users"
 end
