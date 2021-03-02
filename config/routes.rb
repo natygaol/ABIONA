@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   resources :trips do
-    resources :trip_styles, only: [ :index]
+    resources :trip_styles, only: [ :index, :create]
   end
 end
