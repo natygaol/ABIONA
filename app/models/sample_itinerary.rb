@@ -1,0 +1,2 @@
+class SampleItinerary < ApplicationRecord
+end
