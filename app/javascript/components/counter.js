@@ -1,4 +1,5 @@
 const counter = (numberPlace, plusButton, restButton, hiddenInput) => {
+  if (numberPlace != null) {
     let counter = 0;
     numberPlace.innerText = 0;
     hiddenInput.value = counter;
@@ -17,6 +18,7 @@ const counter = (numberPlace, plusButton, restButton, hiddenInput) => {
             hiddenInput.value = 0;
         };
     });
+  };
 } 
 
 export { counter };
