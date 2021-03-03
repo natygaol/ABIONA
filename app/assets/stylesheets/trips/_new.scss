@@ -11,3 +11,22 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.247);
   font-size: 150%;
 }
+
+.plus-and-less-button {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.plus-and-less-button:hover {
+   width: 20px;
+  height: 20px;
+  background-color: rgba(0, 0, 0, 0.349);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

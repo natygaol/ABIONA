@@ -10,24 +10,32 @@
     </div>
   </div>
   <div id="box" class="align-items-center d-flex justify-content-center ml-4">
-    <div>
-      <div id="date-field" class="mb-4 d-flex">
-        <div><strong>Adults</strong></div>
-        <div id="rest-adult-button">-</div>
-        <div id="adult-number-place"></div>
-        <div id="plus-adult-button">+</div>
+    <div> 
+      <div id="date-field" class="mb-4 d-flex align-items-center justify-content-between">
+        <div class="ml-5"><strong>Adults</strong></div>
+        <div class="d-flex align-items-center mr-5">
+          <div class="mr-2"><div id="rest-adult-button" class="plus-and-less-button"><div class="text-black pb-1">-</div></div></div>
+          <div id="adult-number-place"></div>
+          <div class="ml-2"><div id="plus-adult-button" class="plus-and-less-button"><div class="text-black">+</div></div></div>
+        </div>
       </div>
-      <div id="date-field" class="mt-4 d-flex">
-        <div><strong>Children</strong></div>
-        <div id="rest-child-button">-</div>
-        <div id="child-number-place"></div>
-        <div id="plus-child-button">+</div>
+      <div id="date-field" class="mt-4 d-flex align-items-center justify-content-between">
+        <div class="ml-5"><strong>Children</strong></div>
+        <div class="d-flex align-items-center mr-5">
+          <div class="mr-2"><div id="rest-child-button" class="plus-and-less-button"><div class="text-black pb-1">-</div></div></div>
+          <div id="child-number-place"></div>
+          <div class="ml-2"><div id="plus-child-button" class="plus-and-less-button"><div class="text-black">+</div></div></div>
+        </div>
       </div>
     </div>
   </div>
   </div>
   <div class="d-flex justify-content-center p-5">
     <a class="btn btn-outline-secondary mr-5" href="">Back</a>
-    <a class="btn btn-primary ml-5" href="">Next</a>
+    <%= simple_form_for @trip do |t| %>
+        <%= t.input :adults, :as => :hidden %>
+        <%= t.input :children, :as => :hidden %>
+        <%= t.submit %>
+      <% end %>
   </div>
 </div>
