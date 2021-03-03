@@ -1,11 +1,10 @@
 class TripsStylesController < ApplicationController
   def index
-    @trips_style = TripStyle.All
-    # http://localhost:3000/trips/1/trip_styles
-    # @trip = Trip.find(params[:trip_id])
+    @trip_styles = TripStyle.All
+    # http://localhost:3000/trips/1/trip_styles/index
+    @trip = Trip.find(params[:trip_id])
     # @trip_style = TripStyle.new(trip_style_params)
-    # @trip_style.trip = @trip
-    #
+    @trip_styles.trip = @trip
   end
 
   private
