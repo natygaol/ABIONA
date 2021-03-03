@@ -1,9 +1,0 @@
-<h1>What kind of trip are you looking for?</h1>
-
-<ul>
-  <% @trip_styles.each do |style| %>
-  <li><%= link_to style.title, #sing_up_path %></li>
-  <% end %>
-</ul>
-
-<%= link_to "Back", trips_path %>
