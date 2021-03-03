@@ -1,2 +1,100 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0),rgba(20,24,22,1) 92%), url(https://www.kibokolandadventures.com/wp-content/uploads/2019/02/Tanzania-Safari-Tour.jpg);">
+  <div class="container">
+    <h1>Design your dream safari online</h1>
+    <p>Tell us what you like and we´ll recommend a custom adventure in Tanzania</p>
+    <a class="btn btn-primary">Start</a>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="text-center col-sm-8 mb-3">
+      <h2>Tanzania</h2>
+      <p>
+        Your true ‘Out of Africa’ destination, Northern Tanzania is home to the world’s most spectacular wilderness
+        areas.
+        Witness the mighty herds of the Great Migration thundering across the Serengeti plains and end your
+        unforgettable safari with a serene beach holiday on Zanzibar, the beautifully exotic Spice Island.
+      </p>
+    
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <%= image_tag "jirafas.jpg", class: "d-block w-100" %>
+          </div>
+          <div class="carousel-item">
+            <%= image_tag "leones.jpg", class: "d-block w-100" %>
+          </div>
+          <div class="carousel-item">
+            <%= image_tag "elefantes.jpg", class: "d-block w-100" %>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>      
+  </div>
+</div>
+
+<div class="banner" style="background-image: url(https://ucd64e619d1929b3caf6db49ad0e.previews.dropboxusercontent.com/p/thumb/ABGkOypyscXg7Vp95qht-zrPx4thfu2KSwOYCAY6KEKtRz1pR0ryvabbu1AXPx2tieckHkrM7NVnYPoh8wqoRsFY1_IUKyIwjCIhfSO6nhBz0TwLEe7q-5GFO44ya4zYsH2336NroUZ3JbyYoR7VNWUxC39rp_-zERnBznR8s2a7U95w1VDgw1TMS02gpnhY5gEzWx_aNSs7wXqDPbsR3sD56ykP77Y6fCBFB8mMgAF8tmFObDz2sOPZNor0NJ3NZ2PGSo-kh8Q5zcoi9rjuZFtZq6FULMgzBvWFZbqjBV8LkymD0tJNE0KhCTXgnf6vBnC6TT9ZcQLgp-pMfBlckbGVdyRYNZr4cgl4N0U55n7Lvg/p.jpeg?fv_content=true&size_mode=5);">
+  <div class="container">
+    <div class="card-product" style="background-color: transparent">
+      <img src="http://www.salkantaytrekking.com/images/tripadvisor-500x297.png" />
+      <div class="card-product-infos">
+        <h1 style="text-shadow: 1px 1px 2px black">We work with the best</h1>
+        <h2>Wayo Africa is our partner on the ground and will take care of you from the moment you arrive in Tanzania.
+           Combine comfort and style with amazing views and a close to nature experience. The stunning Green Camps are right in the heart of nature at privileged locations.
+           Add more adventure to your trip with our unique offering of canoeing, biking and walking safaris.
+        </h2>
+      </div>
+    </div>   
+  </div>
+  
+</div>
+
+<div class="container">
+  <div class="explore my-5 row justify-content-center">
+    <h1>How Abiona works</h1> 
+  </div>
+    <div class="row justify-content-center">
+        <div class="card" style="width: 18rem; border-radius: 0px">
+          <%= image_tag "traveling.jpg", class: "d-block w-100" %>          
+          <div class="card-body">
+            <p class="card-text">Tell us what kind of trip you’re looking for.</p>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem; border-radius: 0px">
+        <%= image_tag "customize.jpg", class: "d-block w-100" %>          
+          <div class="card-body">
+            <p class="card-text">We’ll instantly propose an itinerary which you can customize online.</p>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem; border-radius: 0px">
+        <%= image_tag "send.jpg", class: "d-block w-100" %>          
+          <div class="card-body">
+            <p class="card-text">Send your itinerary to our operators, who will confirm availability and prices.</p>
+          </div>
+        </div>        
+      </div>      
+    </div>
+    <div class="explore my-5 row justify-content-center">
+      <a class="btn btn-primary">Design your safari</a> 
+    </div>    
+</div>
+
+
+
+
+
+
