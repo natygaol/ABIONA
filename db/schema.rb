@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_02_171721) do
+ActiveRecord::Schema.define(version: 2021_03_03_183029) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,8 @@ ActiveRecord::Schema.define(version: 2021_03_02_171721) do
   create_table "sample_itineraries", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "title"
+    t.text "description"
   end
 
   create_table "sample_itinerary_travel_styles", force: :cascade do |t|
@@ -54,6 +56,7 @@ ActiveRecord::Schema.define(version: 2021_03_02_171721) do
     t.bigint "sample_itinerary_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "place"
     t.index ["accommodation_id"], name: "index_stops_on_accommodation_id"
     t.index ["sample_itinerary_id"], name: "index_stops_on_sample_itinerary_id"
   end
