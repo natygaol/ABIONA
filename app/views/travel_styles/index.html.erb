@@ -2,14 +2,14 @@
 
 
 <div class="container">
-  <div class="cards" id="travel-index">
-  <% counter = 0 %>
+  <div class="cards">
     <% @travel_styles.each do |style| %>
-    <% counter += 1 %>
-    <%= style.title %>
-    <%= image_tag style.picture %>
+        <div class="card" style="background-image: url('<%= image_path "#{style.picture}" %>');">
+          <p><%= style.title %></p>
+        </div>
     <% end %>
   </div>
 </div>
 
 <%= link_to "Back", trips_path %>
+
