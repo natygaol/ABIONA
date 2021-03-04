@@ -1,5 +1,10 @@
 require "open-uri"
 
+require_relative 'seeds/accommodations'
+require_relative 'seeds/activities'
+require_relative 'seeds/sample_itinerary'
+require_relative 'seeds/stops'
+
 puts "Clearing database"
 SampleItineraryTravelStyle.destroy_all
 SampleItinerary.destroy_all
@@ -8,74 +13,11 @@ Accommodation.destroy_all
 Stop.destroy_all
 Activity.destroy_all
 
-puts "Creating accommodations"
 
-accommodations = {
-                  rivertrees: Accommodation.create!(name: "Rivertrees Country Inn", description: "A charming country estate that was once an old coffee farm, on ten acres of fertile greenery, a sanctuary for the birds and wildlife indigenous to the area", photo: URI.open("https://cf.bstatic.com/xdata/images/hotel/max1280x900/91711164.webp?k=c24e2f7f78b68c4336a2a29d7544d68ac369e6ffb4e6f3e775e09aaf7488afeb&o=")),
-                  manyara_green_camp: Accommodation.create!(name: "Manyara Green Camp", description: "Deep in the forest, next to a waterfall and surrounded by wildlife. A stylish camp that is visited by elephants, buffaloes and many other animals who come to the river to drink."),
-                  serengeti_green_camp: Accommodation.create!(name: "Serengeti Green Camp", description: "Always in the heart of the Great Migration, this beautiful camp moves within the Serengeti to put you in prime locations for wildlife viewing."),
-                  wayo_walking_camp: Accommodation.create!(name: "Wayo Walking Camp", description: "Away from the crowds in their own patch of wilderness heaven. The walking camps offer access to remote parts of the Serengeti, while maintaining high levels of comfort."),
-                  mysigio_camp: Accommodation.create!(name: "Mysigio Camp", description: "A luxury highland camp with a myriad of Maasai cultural activities to immerse yourself in the ancient culture."),
-                  sharazad: Accommodation.create!(name: "Sharazad Boutique Hotel", description: "Enjoy beautiful Zanzibar surrounded by lush tropical vegetation as you gaze over the expansive Indian Ocean.")
-                }
-
-ACTIVITIES = {
-                rivertrees: [
-                                  { name: "Canoe Safari", description: "You will travel to Arusha National Park and canoe in a lake teeming with wildlife, including a family of hippos!" },
-                                  { name: "Mountain walk", description: "A two-hour walk among the giraffes, antelope and other herbivores in the mountainous Arusha National Park" },
-                                ],
-                manyara_green_camp: [
-                                  { name: "Countryside biking", description: "A half-day bike ride from Magara falls to Manyara National Park, exploring life in Tanzania's lush countryside." },
-                                  { name: "Lakeside walk", description: "Explore Manyara National Park on a half-day walk as you follow animal trails by the lakeside." },
-                                  { name: "Treetop Walkway", description: "View Manyara National Park from above as you walk for an hour on these incredible bridges that take you from one canopy to another." },
-                                  { name: "Village tour", description: "Bike or tuk-tuk for an hour or two through the local village of Mto Wa Mbu, visiting schools, markets, and a brewery." },
-                                  { name: "Manyara Game-Drives", description: "Spot animals in Manyara National Park with your guide. Learn about their ways from a shorter distance than you would on foot." },
-                                    ],
-              serengeti_green_camp: [
-                                    { name: "Serengeti walk", description: "Enjoy a half-day walk through these epic plains looking for wildlife big and small. This activity is only available when the camp is in Northern Serengeti." },
-                                    { name: "Hot Air Balloon", description: "Soar through the African sky on a hot air balloon, enjoying the beautiful views and watching the movements of the migration down below." },
-                                    { name: "Serengeti Game-Drives", description: "Spot animals in Serengeti with your guide. Learn about their ways from a shorter distance than you would on foot." }
-                                    ],
-              wayo_walking_camp: [
-                                  { name: "Walking Safari", description: "Full-day walks in the ultimate wilderness. Explore on foot an  exclusive access area of the Serengeti that is teeming with wildlife." },
-                                 ],
-              mysigio_camp: [
-                              { name: "Crater Rim Walk", description: "Take in the crater views through on an afternoon walk, stoping to visit Masai villages along the way." },
-                              { name: "Crater Game-Drives", description: "Spot animals in the Ngorongoro crater floor with your guide. Learn about their ways from a shorter distance than you would on foot." },
-                            ],
-              sharazad: [
-                         { name: "Relax on the beach", description: "Lay in the white sands of this tropical destination, swim in the crystal clear waters, or cool-off with a drink in your pool." },
-                        ]
-              }
-
-puts "Creating sample itineraries"
-
-
-sample_itineraries = {
-                        dream_couple_active_dry: SampleItinerary.create!(title: "A Dream Safari for Active Couples", description: "An action packed itinerary for couples during Tanzania's dry season"),
-                        getaway_couple_romantic_dry: SampleItinerary.create!(title: "Bush & Beach Getaway", description: "A romantic itinerary for couples who want to combine adventure with relaxation"),
-                   }
-STOPS = {
-          dream_couple_active_dry: [
-                    { nights: 1, place: "Arusha", accommodation: :rivertrees },
-                    { nights: 2, place: "Manyara", accommodation: :manyara_green_camp },
-                    { nights: 1, place: "Ngorogoro", accommodation: :mysigio_camp },
-                    { nights: 2, place: "Serengeti", accommodation: :serengeti_green_camp },
-                    { nights: 2, place: "Serengeti Remote", accommodation: :wayo_walking_camp }
-          ],
-         getaway_couple_romantic_dry: [
-                    { nights: 2, place: "Arusha", accommodation: :rivertrees },
-                    { nights: 1, place: "Manyara", accommodation: :manyara_green_camp },
-                    { nights: 2, place: "Ngorogoro", accommodation: :mysigio_camp },
-                    { nights: 3, place: "Serengeti", accommodation: :serengeti_green_camp },
-                    { nights: 5, place: "Zanzibar", accommodation: :sharazad }
-          ],
-        }
-
-TRAVEL_STYLE = {
-                  dream_couple_active_dry: ["Walking", "Active", "Fly Camping"],
-                  getaway_couple_romantic_dry: ["Romantic", "Beach", "Gourmet"],
-}
+# TRAVEL_STYLE = {
+#                   dream_couple_active_dry: ["Walking", "Active", "Fly Camping"],
+#                   getaway_couple_romantic_dry: ["Romantic", "Beach", "Gourmet"],
+# }
 
 
 # Travel Styles:
@@ -89,23 +31,32 @@ TRAVEL_STYLE = {
 # "Cycling"
 # "Gourmet"
 
-# Needs picture: sample_itinerary, travel_style, accommodation, activity 
+Needs picture: sample_itinerary, travel_style, accommodation, activity 
+accommodations = {}
+ACCOMMODATIONS.each do |accomodation_name, information|
+  puts "Creating Accommodation"
+  accommodation = Accommodation.new(name: information[:name], description: information[:description])
+  file = URI.open(information[:image])
+  accommodation.photo.attach(io: file, filename: information[:image], content_type: 'image/png')
+  accommodation.save!
+  accommodations[accomodation_name] = accommodation
 
-
-# Acommodations and its activities
-accommodations.each do |name, accommodation|
- puts "Adding activities to: '#{accommodation.name}'"
-  ACTIVITIES[name].each do |information| #preguntar que hace ese [name] (creo que se usa para buscar la key del hash activities, que coincide con la del accommodation)
-    activity = Activity.new(information)
+  puts "Adding activities to: '#{accommodation.name}'"
+  ACTIVITIES[accomodation_name].each do |activity_hash|
+    activity = Activity.new(name: activity_hash[:name], description: activity_hash[:description])
     activity.accommodation = accommodation
+    file = URI.open(activity_hash[:image])
+    activity.photo.attach(io: file, filename: activity_hash[:name], content_type: 'image/png')
     activity.save!
-    puts "  -#{activity.name}"
+    puts "  -#{activity.name}"  
   end
 end
 
+
 # SampleItineraries and its stops & travel_style
-sample_itineraries.each do |name, sample_itinerary|
- puts "Adding stops to: '#{sample_itinerary.title}'"
+sample_itineraries.each do |name, sample_itinerary_hash|
+  sample_itinerary = SampleItinerary.new()
+  puts "Adding stops to: '#{sample_itinerary.title}'"
   STOPS[name].each do |information|
     stop = Stop.new(nights: information[:nights], place: information[:place])
     stop.accommodation = accommodations[information[:accommodation]]
@@ -114,13 +65,18 @@ sample_itineraries.each do |name, sample_itinerary|
     puts "  -#{stop.nights} nights at #{stop.accommodation.name}"
   end
  puts "Adding travel styles"
+ sample_itinerary_hash[:travel_styles].each do |travel_style_title|
+   travel_style = TravelStyle.find_or_create_by(title: travel_style_title)
+   sample_itinerary.travel_styles << travel_style
+ end
+ sample_itinerary.save!
 
-  TRAVEL_STYLE[name].each do |title|
-    travel_style = TravelStyle.find_or_create_by(title: title)
-    sample_itinerary_travel_style = SampleItineraryTravelStyle.new
-    sample_itinerary_travel_style.travel_style = travel_style
-    sample_itinerary_travel_style.sample_itinerary = sample_itinerary
-    sample_itinerary_travel_style.save
-    puts "  -#{travel_style.title}"
-  end
-end
+  # TRAVEL_STYLE[name].each do |title|
+  #   travel_style = TravelStyle.find_or_create_by(title: title)
+  #   sample_itinerary_travel_style = SampleItineraryTravelStyle.new
+  #   sample_itinerary_travel_style.travel_style = travel_style
+  #   sample_itinerary_travel_style.sample_itinerary = sample_itinerary
+  #   sample_itinerary_travel_style.save
+  #   puts "  -#{travel_style.title}"
+  # end
+
