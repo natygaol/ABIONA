@@ -14,133 +14,8 @@ Stop.destroy_all
 Activity.destroy_all
 
 
-# puts "Creating Travel Styles"
-
-# TravelStyle.create!(title: "Romantic")
-# TravelStyle.create!(title: "Active")
-# TravelStyle.create!(title: "Walking Safari")
-# TravelStyle.create!(title: "Romantic")
-# TravelStyle.create!(title: "Active")
-# TravelStyle.create!(title: "Walking Safari")
-# TravelStyle.create!(title: "Romantic")
-# TravelStyle.create!(title: "Active")
-# TravelStyle.create!(title: "Walking Safari")
-# TravelStyle.create!(title: "Romantic")
-# TravelStyle.create!(title: "Active")
-# TravelStyle.create!(title: "Walking Safari")
-
-
-# puts "Creating Accommodations"
-
-# Accommodation.create!(
-#   name: "Rivetrees Country Inn",
-#   description: "A charming country estate that was once an old coffee farm, on ten acres of fertile greenery, a sanctuary for the birds and wildlife indigenous to the area."
-#   )
-
-# Accommodation.create!(
-#   name: "Manyara Green Camp",
-#   description: "Deep in the forest, next to a waterfall and surrounded by wildlife. A stylish camp that is visited by elephants, buffaloes and many other animals who come to the river to drink."
-#   )
-
-# Accommodation.create!(
-#   name: "Serengeti Green Camp",
-#   description: "Always in the heart of the Great Migration, this beautiful camp moves within the Serengeti to put you in prime locations for wildlife viewing."
-#   )
-
-# Accommodation.create!(
-#   name: "Wayo Walking Camp",
-#   description: "Away from the crowds in their own patch of wilderness heaven. The walking camps offer access to remote parts of the Serengeti, while maintaining high levels of comfort."
-#   )
-
-# Accommodation.create!(
-#   name: "Mysigio Camp",
-#   description: "A luxury highland camp with a myriad of Maasai cultural activities to immerse yourself in the ancient culture."
-#   )
-
-# Accommodation.create!(
-#   name: "Sharazad Boutique Hotel",
-#   description: "Enjoy beautiful Zanzibar surrounded by lush tropical vegetation as you gaze over the expansive Indian Ocean."
-#   )
-
 # puts "Creating Activites"
 
-# Activities.create!(
-#   accommodation_id: 1,
-#   name: "Canoe Safari",
-#   description: "You will travel to Arusha National Park and canoe in a lake teeming with wildlife, including a family of hippos!"
-#   )
-
-# Activities.create!(
-#   accommodation_id: 1,
-#   name: "Mountain walk",
-#   description: "A two-hour walk among the giraffes, antelope and other herbivores in the mountainous Arusha National Park"
-#   )
-
-# Activities.create!(
-#   accommodation_id: 2,
-#   name: "Countryside biking",
-#   description: "A half-day bike ride from Magara falls to Manyara National Park, exploring life in Tanzania's lush countryside."
-#   )
-
-# Activities.create!(
-#   accommodation_id: 2,
-#   name: "Lakeside walk",
-#   description: "Explore Manyara National Park on a half-day walk as you follow animal trails by the lakeside."
-#   )
-
-# Activities.create!(
-#   accommodation_id: 2,
-#   name: "Treetop Walkway",
-#   description: "View Manyara National Park from above as you walk for an hour on these incredible bridges that take you from one canopy to another."
-#   )
-
-# Activities.create!(
-#   accommodation_id: 2,
-#   name: "Village tour",
-#   description: "Bike or tuk-tuk for an hour or two through the local village of Mto Wa Mbu, visiting schools, markets, and a brewery."
-#   )
-
-# Activities.create!(
-#   accommodation_id: 2,
-#   name: "Manyara Game-Drives",
-#   description: "Spot animals in Manyara National Park with your guide. Learn about their ways from a shorter distance than on foot."
-#   )
-
-# Activities.create!(
-#   accommodation_id: 3,
-#   name: "Serengeti walk",
-#   description: "Enjoy a half-day walk through these epic plains looking for wildlife big and small. This activity is only available when the camp is in Northern Serengeti."
-#   )
-
-# Activities.create!(
-#   accommodation_id: 3,
-#   name: "Serengeti Game-Drives",
-#   description: "Spot animals in Serengeti with your guide. Learn about their ways from a shorter distance than on foot."
-#   )
-
-# Activities.create!(
-#   accommodation_id: 4,
-#   name: "Walking Safari",
-#   description: "Full-day walks in the ultimate wilderness. Explore on foot an  exclusive access area of the Serengeti that is teeming with wildlife."
-#   )
-
-# Activities.create!(
-#   accommodation_id: 5,
-#   name: "Crater Rim Walk",
-#   description: "Take in the crater views through on an afternoon walk, stoping to visit Masai villages along the way."
-#   )
-
-# Activities.create!(
-#   accommodation_id: 5,
-#   name: "Crater Game-Drives",
-#   description: "Spot animals in the Ngorongoro crater floor with your guide. Learn about their ways from a shorter distance than on foot."
-#   )
-
-# Activities.create!(
-#   accommodation_id: 6,
-#   name: "Relax on the beach",
-#   description: "Lay in the white sands of this tropical destination, swim in the crystal clear waters, or cool-off with a drink in your pool."
-#   )
 
 
 # puts "Creating First Sample Itinerary"
@@ -169,43 +44,82 @@ Activity.destroy_all
 puts "Creating accommodations"
 
 accommodations = {
-                  serengeti_camp: Accommodation.create!(name: "Serengeti House", description: "Description"),
-                  ngorogoro_camp: Accommodation.create!(name: "Ngorongoro House", description: "Description"),
+                  rivertrees: Accommodation.create!(name: "Rivertrees Country Inn", description: "A charming country estate that was once an old coffee farm, on ten acres of fertile greenery, a sanctuary for the birds and wildlife indigenous to the area."),
+                  manyara_green_camp: Accommodation.create!(name: "Manyara Green Camp", description: "Deep in the forest, next to a waterfall and surrounded by wildlife. A stylish camp that is visited by elephants, buffaloes and many other animals who come to the river to drink."),
+                  serengeti_green_camp: Accommodation.create!(name: "Serengeti Green Camp", "Always in the heart of the Great Migration, this beautiful camp moves within the Serengeti to put you in prime locations for wildlife viewing."),
+                  wayo_walking_camp: Accommodation.create!(name: "Wayo Walking Camp", "Away from the crowds in their own patch of wilderness heaven. The walking camps offer access to remote parts of the Serengeti, while maintaining high levels of comfort."),
+                  mysigio_camp: Accommodation.create!(name: "Mysigio Camp", "A luxury highland camp with a myriad of Maasai cultural activities to immerse yourself in the ancient culture."),
+                  sharazad: Accommodation.create! (name: "Sharazad Boutique Hotel", description: "Enjoy beautiful Zanzibar surrounded by lush tropical vegetation as you gaze over the expansive Indian Ocean.")
                 }
 
 ACTIVITIES = {
-                serengeti_camp: [
-                                  { name: "Half Day", description: "Description de serengeti_camp" },
-                                  { name: "Full Day", description: "Description" },
+                rivertrees: [
+                                  { name: "Canoe Safari", description: "You will travel to Arusha National Park and canoe in a lake teeming with wildlife, including a family of hippos!" },
+                                  { name: "Mountain walk", description: "A two-hour walk among the giraffes, antelope and other herbivores in the mountainous Arusha National Park" },
                                 ],
-                ngorogoro_camp: [
-                                  { name: "Half Day", description: "Description de ngorogoro_camp" },
-                                  { name: "Full Day", description: "Description" },
-                                ],
-}
+                manyara_green_camp: [
+                                  { name: "Countryside biking", description: "A half-day bike ride from Magara falls to Manyara National Park, exploring life in Tanzania's lush countryside." },
+                                  { name: "Lakeside walk", description: "Explore Manyara National Park on a half-day walk as you follow animal trails by the lakeside." },
+                                  { name: "Treetop Walkway", description: "View Manyara National Park from above as you walk for an hour on these incredible bridges that take you from one canopy to another." },
+                                  { name: "Village tour", description: "Bike or tuk-tuk for an hour or two through the local village of Mto Wa Mbu, visiting schools, markets, and a brewery." },
+                                  { name: "Manyara Game-Drives", description: "Spot animals in Manyara National Park with your guide. Learn about their ways from a shorter distance than you would on foot." },
+                                    ],
+              serengeti_green_camp: [
+                                    { name: "Serengeti walk", description: "Enjoy a half-day walk through these epic plains looking for wildlife big and small. This activity is only available when the camp is in Northern Serengeti." },
+                                    { name: "Hot Air Balloon", description: "Soar through the African sky on a hot air balloon, enjoying the beautiful views and watching the movements of the migration down below." },
+                                    { name: "Serengeti Game-Drives", description: "Spot animals in Serengeti with your guide. Learn about their ways from a shorter distance than you would on foot." }
+                                    ],
+              wayo_walking_camp: [
+                                  { name: "Walking Safari", description: "Full-day walks in the ultimate wilderness. Explore on foot an  exclusive access area of the Serengeti that is teeming with wildlife." },
+                                 ],
+              mysigio_camp: [
+                              { name: "Crater Rim Walk", description: "Take in the crater views through on an afternoon walk, stoping to visit Masai villages along the way." },
+                              { name: "Crater Game-Drives", description: "Spot animals in the Ngorongoro crater floor with your guide. Learn about their ways from a shorter distance than you would on foot." },
+                            ],
+              sharazad: [
+                         { name: "Relax on the beach", description: "Lay in the white sands of this tropical destination, swim in the crystal clear waters, or cool-off with a drink in your pool." },
+                        ]
+              }
 
 puts "Creating sample itineraries"
 
 
 sample_itineraries = {
-                        chill: SampleItinerary.create!(title: "Chill", description: "Description"),
-                        brave: SampleItinerary.create!(title: "Brave", description: "Description"),
+                        dream_couple_active_dry: SampleItinerary.create!(title: "A Dream Safari for Active Couples", description: "An action packed itinerary for couples during Tanzania's dry season"),
+                        getaway_couple_romantic_dry: SampleItinerary.create!(title: "Bush & Beach Getaway", description: "A romantic itinerary for couples who want to combine adventure with relaxation"),
                    }
 STOPS = {
-          chill: [
-                    { nights: 1, place: "Serengeti", accommodation: :serengeti_camp },
-                    { nights: 1, place: "Ngorogoro", accommodation: :ngorogoro_camp }
+          dream_couple_active_dry: [
+                    { nights: 1, place: "Arusha", accommodation: :rivertrees },
+                    { nights: 2, place: "Manyara", accommodation: :manyara_green_camp }
+                    { nights: 1, place: "Ngorogoro", accommodation: :mysigio_camp }
+                    { nights: 2, place: "Serengeti", accommodation: :serengeti_green_camp },
+                    { nights: 2, place: "Serengeti Remote", accommodation: :wayo_walking_camp },
           ],
-         brave: [
-                    { nights: 3, place: "Serengeti", accommodation: :serengeti_camp },
-                    { nights: 4, place: "Ngorogoro", accommodation: :ngorogoro_camp }
+         getaway_couple_romantic_dry: [
+                    { nights: 2, place: "Arusha", accommodation: :rivertrees },
+                    { nights: 1, place: "Manyara", accommodation: :manyara_green_camp }
+                    { nights: 2, place: "Ngorogoro", accommodation: :mysigio_camp }
+                    { nights: 3, place: "Serengeti", accommodation: :serengeti_green_camp },
+                    { nights: 5, place: "Zanzibar", accommodation: :sharazad },
           ],
         }
 
 TRAVEL_STYLE = {
-                  chill: ["Beach", "Waterfalls", "Lake"],
-                  brave: ["Safari", "Waterfalls", "Jungle"]
+                  dream_couple_active_dry: ["Walking", "Active", "Fly Camping"],
+                  getaway_couple_romantic_dry: ["Romantic", "Beach", "Gourmet"],
 }
+
+# "Romantic"
+# "Active"
+# "Walking Safari"
+# "Beach"
+# "Family"
+# "Cultural"
+# "Fly camping"
+# "Cycling"
+# "Gourmet"
+
 
 # Acommodations and its activities
 accommodations.each do |name, accommodation|
