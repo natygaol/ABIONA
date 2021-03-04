@@ -1,14 +1,12 @@
-<div class="bg-white mb-5">
+<div class="bg-white mb-4">
   <h1 class="text-center p-5 ">When and with whom are<br> you travelling?</h1>
   <div class= "container d-flex justify-content-center">
-  <div id="box" class="mr-4 shadow">
-    <div class="form-wrapper" style="width: 200px; margin: 0 auto;">
-      <h5>flat picker intalation</h5>
+  <div id="box" class="mr-4">
       <%= simple_form_for @trip do |t| %>
-        <%= t.input :start_date, as: :date, html5: true %>
-    </div>
+      <%= t.input :start_date, as: :hidden, required: false, input_html: { id:"range_start" } %>
+      <div class="d-none"><%= t.input :end_date, as: :hidden, required: false, input_html: { id:"range_end" } %></div>
   </div>
-  <div id="box" class="align-items-center d-flex justify-content-center ml-4">
+  <div id="box" class="align-items-center d-flex justify-content-center ml-4 pb-5">
     <div> 
       <div id="date-field" class="mb-4 d-flex align-items-center justify-content-between">
         <div class="ml-5"><strong>Adults</strong></div>

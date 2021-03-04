@@ -7,6 +7,8 @@ class TripsController < ApplicationController
 
   def create
     @trip = Trip.new(trip_params)
+    @trip.user_id = current_user
+    @trip.sent = false
     if @trip.save
       redirect_to root_path
     else
@@ -17,7 +19,7 @@ class TripsController < ApplicationController
   private
 
   def trip_params
-    params.require(:trip).permit(:start_date, :adults, :children)
+    params.require(:trip).permit(:start_date, :end_date, :adults, :children)
   end
 
 end

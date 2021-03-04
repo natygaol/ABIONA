@@ -7,11 +7,13 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "flatpickr/dist/flatpickr";
 
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
 @import "trips/new";
+
 
 body {
     min-width: 100vh;
