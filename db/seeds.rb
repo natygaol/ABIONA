@@ -1,10 +1,5 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require "open-uri"
+
 puts "Clearing database"
 SampleItineraryTravelStyle.destroy_all
 SampleItinerary.destroy_all
@@ -13,38 +8,10 @@ Accommodation.destroy_all
 Stop.destroy_all
 Activity.destroy_all
 
-
-# puts "Creating Activites"
-
-
-
-# puts "Creating First Sample Itinerary"
-
-# sample_itinerary = SampleItinerary.create!(
-#   title: "Out of Africa: Romance and Safari",
-#   description: "Lose yourself in the savannah in this classic, East African journey. Enjoy the Great Migration at its best, with a wonderful combination of lesiure and activities."
-#   )
-
-# puts "Adding Travel Style to Sample Itinerary ID #{sample_itinerary.id}"
-
-# SampleItineraryTravelStyle.create!(
-#   sample_itinerary: sample_itinerary,
-#   travel_style_id: 1, 
-#   )
-
-# SampleItineraryTravelStyle.create!(
-#   sample_itinerary: sample_itinerary,
-#   travel_style_id: 2, 
-#   )
-
-
-# Clean seeds
-# Create seeds
-
 puts "Creating accommodations"
 
 accommodations = {
-                  rivertrees: Accommodation.create!(name: "Rivertrees Country Inn", description: "A charming country estate that was once an old coffee farm, on ten acres of fertile greenery, a sanctuary for the birds and wildlife indigenous to the area."),
+                  rivertrees: Accommodation.create!(name: "Rivertrees Country Inn", description: "A charming country estate that was once an old coffee farm, on ten acres of fertile greenery, a sanctuary for the birds and wildlife indigenous to the area", photo: URI.open("https://cf.bstatic.com/xdata/images/hotel/max1280x900/91711164.webp?k=c24e2f7f78b68c4336a2a29d7544d68ac369e6ffb4e6f3e775e09aaf7488afeb&o=")),
                   manyara_green_camp: Accommodation.create!(name: "Manyara Green Camp", description: "Deep in the forest, next to a waterfall and surrounded by wildlife. A stylish camp that is visited by elephants, buffaloes and many other animals who come to the river to drink."),
                   serengeti_green_camp: Accommodation.create!(name: "Serengeti Green Camp", description: "Always in the heart of the Great Migration, this beautiful camp moves within the Serengeti to put you in prime locations for wildlife viewing."),
                   wayo_walking_camp: Accommodation.create!(name: "Wayo Walking Camp", description: "Away from the crowds in their own patch of wilderness heaven. The walking camps offer access to remote parts of the Serengeti, while maintaining high levels of comfort."),
