@@ -10,7 +10,10 @@ TRAVEL_STYLES = [{title: "wilderness",
   {title: "family",
   picture: "https://www.mangoafricansafaris.com/images/blogimg_3256"},
   {title: "lodge",
-  picture: "https://wayoafrica.com/uploads/news/id78/Tarangire-Safari-Lodge-Terrace.jpg"}]
+  picture: "https://wayoafrica.com/uploads/news/id78/Tarangire-Safari-Lodge-Terrace.jpg"},
+  {title: "adventure",
+  picture: "https://wayoafrica.com/uploads/news/id89/2-olivers-double-room-en-suite.jpg"},
+]
 
 
 puts 'Creating travel styles and fake users...'
