@@ -100,7 +100,7 @@ ActiveRecord::Schema.define(version: 2021_03_02_171721) do
     t.boolean "sent"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id", null: false
+    t.bigint "user_id"
     t.index ["user_id"], name: "index_trips_on_user_id"
   end
 
