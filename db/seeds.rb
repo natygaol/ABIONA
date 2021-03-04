@@ -210,7 +210,7 @@ TRAVEL_STYLE = {
 # Acommodations and its activities
 accommodations.each do |name, accommodation|
  puts "Adding activities to: '#{accommodation.name}'"
-  ACTIVITIES[name].each do |information| #preguntar que hace ese [name]
+  ACTIVITIES[name].each do |information| #preguntar que hace ese [name] (creo que se usa para buscar la key del hash activities, que coincide con la del accommodation)
     activity = Activity.new(information)
     activity.accommodation = accommodation
     activity.save!
