@@ -210,7 +210,7 @@ TRAVEL_STYLE = {
 # Acommodations and its activities
 accommodations.each do |name, accommodation|
  puts "Adding activities to: '#{accommodation.name}'"
-  ACTIVITIES[name].each do |information|
+  ACTIVITIES[name].each do |information| #preguntar que hace ese [name]
     activity = Activity.new(information)
     activity.accommodation = accommodation
     activity.save!
