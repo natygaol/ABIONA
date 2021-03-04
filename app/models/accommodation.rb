@@ -3,4 +3,5 @@ class Accommodation < ApplicationRecord
   has_many :stops
   has_many :trip_stops
   enum category: [ :romantic, :active, :walking ]
+  has_one_attached :photo
 end

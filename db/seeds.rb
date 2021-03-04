@@ -46,10 +46,10 @@ puts "Creating accommodations"
 accommodations = {
                   rivertrees: Accommodation.create!(name: "Rivertrees Country Inn", description: "A charming country estate that was once an old coffee farm, on ten acres of fertile greenery, a sanctuary for the birds and wildlife indigenous to the area."),
                   manyara_green_camp: Accommodation.create!(name: "Manyara Green Camp", description: "Deep in the forest, next to a waterfall and surrounded by wildlife. A stylish camp that is visited by elephants, buffaloes and many other animals who come to the river to drink."),
-                  serengeti_green_camp: Accommodation.create!(name: "Serengeti Green Camp", "Always in the heart of the Great Migration, this beautiful camp moves within the Serengeti to put you in prime locations for wildlife viewing."),
-                  wayo_walking_camp: Accommodation.create!(name: "Wayo Walking Camp", "Away from the crowds in their own patch of wilderness heaven. The walking camps offer access to remote parts of the Serengeti, while maintaining high levels of comfort."),
-                  mysigio_camp: Accommodation.create!(name: "Mysigio Camp", "A luxury highland camp with a myriad of Maasai cultural activities to immerse yourself in the ancient culture."),
-                  sharazad: Accommodation.create! (name: "Sharazad Boutique Hotel", description: "Enjoy beautiful Zanzibar surrounded by lush tropical vegetation as you gaze over the expansive Indian Ocean.")
+                  serengeti_green_camp: Accommodation.create!(name: "Serengeti Green Camp", description: "Always in the heart of the Great Migration, this beautiful camp moves within the Serengeti to put you in prime locations for wildlife viewing."),
+                  wayo_walking_camp: Accommodation.create!(name: "Wayo Walking Camp", description: "Away from the crowds in their own patch of wilderness heaven. The walking camps offer access to remote parts of the Serengeti, while maintaining high levels of comfort."),
+                  mysigio_camp: Accommodation.create!(name: "Mysigio Camp", description: "A luxury highland camp with a myriad of Maasai cultural activities to immerse yourself in the ancient culture."),
+                  sharazad: Accommodation.create!(name: "Sharazad Boutique Hotel", description: "Enjoy beautiful Zanzibar surrounded by lush tropical vegetation as you gaze over the expansive Indian Ocean.")
                 }
 
 ACTIVITIES = {
@@ -91,17 +91,17 @@ sample_itineraries = {
 STOPS = {
           dream_couple_active_dry: [
                     { nights: 1, place: "Arusha", accommodation: :rivertrees },
-                    { nights: 2, place: "Manyara", accommodation: :manyara_green_camp }
-                    { nights: 1, place: "Ngorogoro", accommodation: :mysigio_camp }
+                    { nights: 2, place: "Manyara", accommodation: :manyara_green_camp },
+                    { nights: 1, place: "Ngorogoro", accommodation: :mysigio_camp },
                     { nights: 2, place: "Serengeti", accommodation: :serengeti_green_camp },
-                    { nights: 2, place: "Serengeti Remote", accommodation: :wayo_walking_camp },
+                    { nights: 2, place: "Serengeti Remote", accommodation: :wayo_walking_camp }
           ],
          getaway_couple_romantic_dry: [
                     { nights: 2, place: "Arusha", accommodation: :rivertrees },
-                    { nights: 1, place: "Manyara", accommodation: :manyara_green_camp }
-                    { nights: 2, place: "Ngorogoro", accommodation: :mysigio_camp }
+                    { nights: 1, place: "Manyara", accommodation: :manyara_green_camp },
+                    { nights: 2, place: "Ngorogoro", accommodation: :mysigio_camp },
                     { nights: 3, place: "Serengeti", accommodation: :serengeti_green_camp },
-                    { nights: 5, place: "Zanzibar", accommodation: :sharazad },
+                    { nights: 5, place: "Zanzibar", accommodation: :sharazad }
           ],
         }
 
@@ -110,6 +110,8 @@ TRAVEL_STYLE = {
                   getaway_couple_romantic_dry: ["Romantic", "Beach", "Gourmet"],
 }
 
+
+# Travel Styles:
 # "Romantic"
 # "Active"
 # "Walking Safari"
@@ -119,6 +121,8 @@ TRAVEL_STYLE = {
 # "Fly camping"
 # "Cycling"
 # "Gourmet"
+
+# Needs picture: sample_itinerary, travel_style, accommodation, activity 
 
 
 # Acommodations and its activities
