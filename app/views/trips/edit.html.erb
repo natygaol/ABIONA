@@ -1,7 +1,11 @@
-
-<%= simple_form_for @trip do |t| %>
-<%= t.association :travel_styles, as: :check_boxes %>
-<%= t.submit %>
-<% end %>
-                  <%# input_html: { class: "tag-selector" },
-                  item_wrapper_class: 'tag-item' %>
+<div class="container text-center p-3 vh-85">
+    <h1 class="pt-3 pb-5">What kind of trip are you looking for?</h1>
+    <%= simple_form_for @trip do |t| %>
+    <%= t.association :travel_styles, 
+                      as: :check_boxes,
+                      legend_tag: false,
+                      input_html: { class: "tag-selector" },
+                      item_wrapper_class: 'tag-item' %>
+    <%= t.button :submit, class: "btn btn-ghost" %>
+    <% end %>
+</div>
