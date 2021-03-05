@@ -1,7 +1,26 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+TravelStyle.destroy_all
+User.destroy_all
+
+TRAVEL_STYLES = [{title: "wilderness",
+  picture: "https://wayoafrica.com/uploads/news/id75/32.png"}, 
+  {title: "luxury",
+  picture: "https://wayoafrica.com/uploads/news/id89/2-olivers-double-room-en-suite.jpg"},
+  {title: "honeymoon",
+  picture: "https://wayoafrica.com/uploads/news/id45/Gibbs-Farm-Bustani-House-from-above.jpg"},
+  {title: "family",
+  picture: "https://www.mangoafricansafaris.com/images/blogimg_3256"},
+  {title: "lodge",
+  picture: "https://wayoafrica.com/uploads/news/id78/Tarangire-Safari-Lodge-Terrace.jpg"},
+  {title: "adventure",
+  picture: "https://wayoafrica.com/uploads/news/id89/2-olivers-double-room-en-suite.jpg"},
+]
+
+
+puts 'Creating travel styles and fake users...'
+
+TRAVEL_STYLES.each do |hash|
+  TravelStyle.create(picture: hash[:picture], title: hash[:title])
+end
+
+puts 'Finished!'
+
