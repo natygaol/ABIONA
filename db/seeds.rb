@@ -60,19 +60,20 @@ SAMPLE_ITINERARIES.each do |name, sample_itinerary_hash|
     puts "  -#{stop.nights} nights at #{stop.accommodation.name}"
   end
  puts "Adding travel styles"
+ sample_itinerary.save!
  sample_itinerary_hash[:travel_styles].each do |travel_style_title|
     travel_style = TravelStyle.find_or_initialize_by(title: travel_style_title)
     unless travel_style.id
       file = URI.open(TRAVEL_STYLES[travel_style_title])
-      travel_style.photo.attach(io: file, filename: travel_style_title.join, content_type: 'image/png')
+      travel_style.photo.attach(io: file, filename: travel_style_title, content_type: 'image/png')
       travel_style.save
     end
     sample_itinerary_travel_style = SampleItineraryTravelStyle.new
     sample_itinerary_travel_style.travel_style = travel_style
     sample_itinerary_travel_style.sample_itinerary = sample_itinerary
+    sample_itinerary_travel_style.save!
     puts "  -#{travel_style.title}"
  end
- sample_itinerary.save!
 end
 
 # # SampleItineraries and its stops & travel_style
