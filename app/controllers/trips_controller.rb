@@ -26,6 +26,10 @@ class TripsController < ApplicationController
     redirect_to sample_itineraries_path
   end
 
+  def show
+    @trip = Trip.find(params[:id])
+  end
+
   private
 
   def trip_params
