@@ -1,5 +1,5 @@
 class TripsController < ApplicationController
- skip_before_action :authenticate_user!, only: [:new, :create]
+ skip_before_action :authenticate_user!, only: [:new, :create, :edit, :update]
 
   def new
     @trip = Trip.new
@@ -7,19 +7,28 @@ class TripsController < ApplicationController
 
   def create
     @trip = Trip.new(trip_params)
-    @trip.user_id = current_user
-    @trip.sent = false
+    @trip.user_id = current_user 
+    @trip.sent = false #eventualmente esto hay que ponerlo en el modelo y schema
     if @trip.save
-      redirect_to root_path
+      redirect_to edit_trip_path(@trip)
     else
       render :new
     end
   end
 
+  def edit
+    @trip = Trip.find(params[:id])
+  end
+
+  def update
+    @trip = Trip.find(params[:id])
+    @trip.update(trip_params)
+    redirect_to edit_trip_path(@trip)
+  end
+
   private
 
   def trip_params
-    params.require(:trip).permit(:start_date, :end_date, :adults, :children)
+    params.require(:trip).permit(:start_date, :end_date, :adults, :children, travel_style_ids:[])
   end
-
 end
