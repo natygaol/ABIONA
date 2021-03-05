@@ -30,7 +30,7 @@ serengeti_green_camp: [
       image: "https://res.cloudinary.com/dafd6bi7v/image/upload/v1614891352/activities/Serengeti_Green_Camp_8_mtie4m.jpg" },
   { name: "Hot Air Balloon",
     description: "Soar through the African sky on a hot air balloon, enjoying the beautiful views and watching the movements of the migration down below.",
-      image: "https://res.cloudinary.com/dafd6bi7v/image/upload/v1614891352/activities/Serengeti_Green_Camp_8_mtie4m.jpg" }, #change image
+      image: "https://images.unsplash.com/photo-1517001170041-70a5966d5402?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1655&q=80" },
   { name: "Serengeti Game-Drives",
     description: "Spot animals in Serengeti with your guide. Learn about their ways from a shorter distance than you would on foot.",
     image: "https://images.unsplash.com/photo-1527073620320-77635188c627?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80"
