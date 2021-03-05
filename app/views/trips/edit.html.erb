@@ -5,7 +5,10 @@
                       as: :check_boxes,
                       legend_tag: false,
                       input_html: { class: "tag-selector" },
-                      item_wrapper_class: 'tag-item' %>
-    <%= t.button :submit, class: "btn btn-ghost" %>
-    <% end %>
+                      item_wrapper_class: 'tag-item' %>                     
+    <div class="py-5">
+      <%= link_to  "Back", new_trip_path, class:"btn btn-outline-secondary mr-5" %>
+      <%= t.submit "Next", class: "btn btn-primary ml-5" %>
+      <% end %>
+    </div>
 </div>

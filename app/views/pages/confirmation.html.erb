@@ -2,8 +2,17 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-5">
+      <%= image_tag "hifive.svg", class: "img-fluid p-5" %>
+      <div class="text-center">
+        <h2 class="my-5">Your itinerary has been sent to <br> your operator!</h2>
+        <div class="text-secondary m-5">
+          <p>We’re happy you’re happy with your trip design</p>
+          <p>Your operator still needs to check availability, so we sent them your itinerary along with your contact details.</p>
+          <p>They will be in touch soon. Happy safari!</p>
+        </div>      
+      <%= link_to  "Continue Exploring", root_path, class:"btn btn-primary my-5" %>
+      </div>
       </div>
     </div>
   </div>
 </div>
-<%= image_tag "hifive.svg", class: "img-fluid p-5" %>

@@ -7,9 +7,9 @@ class TripsController < ApplicationController
 
   def create
     @trip = Trip.new(trip_params)
-    @trip.user_id = current_user 
+    @trip.user = current_user 
     @trip.sent = false #eventualmente esto hay que ponerlo en el modelo y schema
-    if @trip.save
+    if @trip.save 
       redirect_to edit_trip_path(@trip)
     else
       render :new
@@ -23,7 +23,11 @@ class TripsController < ApplicationController
   def update
     @trip = Trip.find(params[:id])
     @trip.update(trip_params)
-    redirect_to edit_trip_path(@trip)
+    redirect_to sample_itineraries_path
+  end
+
+  def show
+    @trip = Trip.find(params[:id])
   end
 
   # def trip_status
