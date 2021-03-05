@@ -9,7 +9,7 @@ class TripsController < ApplicationController
     @trip = Trip.new(trip_params)
     @trip.user_id = current_user 
     @trip.sent = false #eventualmente esto hay que ponerlo en el modelo y schema
-    if @trip.save
+    if @trip.save 
       redirect_to edit_trip_path(@trip)
     else
       render :new
