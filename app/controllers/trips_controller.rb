@@ -26,6 +26,16 @@ class TripsController < ApplicationController
     redirect_to edit_trip_path(@trip)
   end
 
+  # def trip_status
+  #   @trip = Trip.find(params[:id])
+  #   @trip.status = true
+  #   if @trip.save!
+  #     redirect_to confirmation_path
+  #   else 
+  #     render :
+  #   end
+  # end
+
   private
 
   def trip_params
