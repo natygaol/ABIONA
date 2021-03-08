@@ -6,8 +6,9 @@
                       legend_tag: false,
                       input_html: { class: "tag-selector" },
                       item_wrapper_class: 'tag-item' %>
-    <%#= t.button :submit, class: "btn btn-ghost" %>
-    <%#= link_to "Update trip", sample_itineraries_path, class: "btn btn-ghost" %>
-    <%= t.submit "Update trip", :class => "btn btn-ghost" %>
+    <div class="p-5">
+    <%= link_to  "Back", root_path, class: "btn btn-outline-secondary mr-5" %>
+    <%= t.submit "Next", :class => "btn btn-primary ml-5" %>
+    </div>
     <% end %>
 </div>
