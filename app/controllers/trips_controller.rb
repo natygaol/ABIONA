@@ -2,14 +2,16 @@ class TripsController < ApplicationController
  skip_before_action :authenticate_user!, only: [:new, :create, :edit, :update]
 
   def new
-    @trip = Trip.new
+    @trip = Trip.new(children_price: 100, adult_price: 200)
   end
 
   def create
     @trip = Trip.new(trip_params)
     @trip.user = current_user
+    @trip.children_price = 100
+    @trip.adult_price = 200
     @trip.sent = false #eventualmente esto hay que ponerlo en el modelo y schema
-    @trip.total_days = (@trip.start_date - @trip.end_date).to_i * @trip.children_price + (@trip.start_date - @trip.end_date).to_i * @trip.adult_price
+    @trip.total_days = (@trip.end_date - @trip.start_date).to_i * @trip.children_price + (@trip.end_date - @trip.start_date).to_i * @trip.adult_price
     if @trip.save
       redirect_to edit_trip_path(@trip)
     else
@@ -44,6 +46,6 @@ class TripsController < ApplicationController
   private
 
   def trip_params
-    params.require(:trip).permit(:start_date, :end_date, :adults, :children, travel_style_ids:[], )
+    params.require(:trip).permit(:start_date, :end_date, :adults, :children, :children_price, :adult_price , travel_style_ids:[])
   end
 end

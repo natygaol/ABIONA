@@ -25,9 +25,11 @@ import { initFlatpickr } from "../plugins/flatpickr";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { dateTripCounter } from '../components/date_trip_counter';
+import { price } from '../plugins/price';
 
 
 document.addEventListener('turbolinks:load', () => {
   dateTripCounter();
   initFlatpickr();
+  price();
 });
