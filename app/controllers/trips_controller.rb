@@ -27,9 +27,14 @@ class TripsController < ApplicationController
   end
 
   def show
+    @user = current_user
     @trip = Trip.find(params[:id])
   end
 
+  def inquiries
+    @user = current_user
+    @trips = Trip.where(user: current_user).where(sent: true)
+    
   def generate_trip_stops
     #1 find trip
     trip = Trip.find(params[:id])
@@ -63,7 +68,7 @@ class TripsController < ApplicationController
   #   if @trip.save!
   #     redirect_to confirmation_path
   #   else 
-  #     render :
+  #     render :show
   #   end
   # end
 
