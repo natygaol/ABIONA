@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :trips, only: [:new, :create, :edit, :update, :show] 
   resources :sample_itineraries, only: [:index]
-  # patch 'tripstatus', to: "trips#change_status" para cambiar el status a true
+  # patch 'tripstatus', to: "trips#change_status" 
   get 'confirmation', to: "pages#confirmation"
+  get 'inqueries', to: "trips#inqueries"
 end
