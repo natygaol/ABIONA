@@ -1,5 +1,5 @@
 class TripsController < ApplicationController
- skip_before_action :authenticate_user!, only: [:new, :create, :edit, :update]
+#  skip_before_action :authenticate_user!, only: [:new, :create, :edit, :update]
 
   def new
     @trip = Trip.new
@@ -23,7 +23,7 @@ class TripsController < ApplicationController
   def update
     @trip = Trip.find(params[:id])
     @trip.update(trip_params)
-    redirect_to sample_itineraries_path
+    redirect_to trip_sample_itineraries_path(@trip)
   end
 
   def show
@@ -34,6 +34,32 @@ class TripsController < ApplicationController
   def inquiries
     @user = current_user
     @trips = Trip.where(user: current_user).where(sent: true)
+    
+  def generate_trip_stops
+    #1 find trip
+    trip = Trip.find(params[:id])
+    #2 generate trip stops and its activities
+      #a. find respective sample itinery
+      sample_itinerary = SampleItinerary.find(trip.sample_itinerary_id)
+      #b. find its stops and iterate over them
+      sample_itinerary.stops.each do |stop|    
+        #c. generating trip stops
+        trip_stop = TripStop.new
+        trip_stop.accommodation = stop.accommodation
+        trip_stop.trip = trip
+        trip_stop.nights = stop.nights
+        trip_stop.save!
+        #d. for each trip stop add the corresponding activities(given the accommodation)
+        stop.accommodation.activities.first(trip_stop.nights * 2).each do |activity|
+          trip_stop_activity = TripStopActivity.create!(trip_stop: trip_stop, activity: activity)
+        end
+      end
+    #3 save all
+    redirect_to customize_path(trip)
+  end
+
+  def customize
+    @trip = Trip.find(params[:id])
   end
 
   # def trip_status

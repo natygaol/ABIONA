@@ -9,11 +9,11 @@ require_relative 'seeds/travel_styles'
 puts "Clearing database"
 SampleItineraryTravelStyle.destroy_all
 SampleItinerary.destroy_all
-TravelStyle.destroy_all
 Accommodation.destroy_all
 Stop.destroy_all
 Activity.destroy_all
 User.destroy_all
+
 
 
 # Travel Styles:
