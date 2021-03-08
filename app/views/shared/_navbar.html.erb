@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="logo"><strong>Abiona</strong></div>
   <div class="align-items-center d-flex justify-content-center">
-    <a class="mr-3 text-white text-decoration-none">My trips</a>
+    <%= link_to  "My Trips", inqueries_path, class: "mr-3 text-white text-decoration-none" %>
     <div class="mr-3"><%= link_to  "Start", new_trip_path, class:"btn btn-outline-primary" %></div>
     <%= link_to  "Log in", user_session_path, class: "btn btn-primary" %>
   </div>

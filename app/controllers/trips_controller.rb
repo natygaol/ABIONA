@@ -30,7 +30,11 @@ class TripsController < ApplicationController
     @user = current_user
     @trip = Trip.find(params[:id])
   end
-  
+
+  def inqueries
+    @trips = Trip.where(sent: true)
+  end
+
   # def trip_status
   #   @trip = Trip.find(params[:id])
   #   @trip.status = true
