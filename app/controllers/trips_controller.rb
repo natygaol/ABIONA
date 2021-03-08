@@ -34,13 +34,15 @@ class TripsController < ApplicationController
   def inquiries
     @user = current_user
     @trips = Trip.where(user: current_user).where(sent: true)
+  end
     
   def generate_trip_stops
     #1 find trip
     trip = Trip.find(params[:id])
+    #aqui podria ir un if para evitar que se corra este metodo cuando ya se corrió
     #2 generate trip stops and its activities
       #a. find respective sample itinery
-      sample_itinerary = SampleItinerary.find(trip.sample_itinerary_id)
+      sample_itinerary = SampleItinerary.find(params[:sample_itinerary_id])
       #b. find its stops and iterate over them
       sample_itinerary.stops.each do |stop|    
         #c. generating trip stops
