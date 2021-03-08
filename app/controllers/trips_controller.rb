@@ -32,7 +32,8 @@ class TripsController < ApplicationController
   end
 
   def inqueries
-    @trips = Trip.where(sent: true)
+    @user = current_user
+    @trips = Trip.where(user: current_user).where(sent: true)
   end
 
   # def trip_status
