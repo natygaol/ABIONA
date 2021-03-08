@@ -1,5 +1,5 @@
 class TripsController < ApplicationController
- skip_before_action :authenticate_user!, only: [:new, :create, :edit, :update]
+#  skip_before_action :authenticate_user!, only: [:new, :create, :edit, :update]
 
   def new
     @trip = Trip.new
@@ -23,7 +23,7 @@ class TripsController < ApplicationController
   def update
     @trip = Trip.find(params[:id])
     @trip.update(trip_params)
-    redirect_to sample_itineraries_path
+    redirect_to trip_sample_itineraries_path(@trip)
   end
 
   def show
