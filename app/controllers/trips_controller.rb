@@ -34,6 +34,7 @@ class TripsController < ApplicationController
   def inquiries
     @user = current_user
     @trips = Trip.where(user: current_user).where(sent: true)
+  end
     
   def generate_trip_stops
     #1 find trip
