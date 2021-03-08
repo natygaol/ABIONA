@@ -1,7 +1,7 @@
 <div class="container">
-  <h1 class="text-center p-5">My inqueries</h1>
+  <h1 class="text-center p-5">My inquiries</h1>
   <% if @trips.first.nil? %>
-    <h2 class="text-center  vh-85">It looks like you don't have inqueries yet =(</h2>
+    <h2 class="text-center  vh-85">It looks like you don't have inquiries yet =(</h2>
   <% else %>
     <% @trips.each do |trip| %>
       <div class="row">

@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   resources :sample_itineraries, only: [:index]
   # patch 'tripstatus', to: "trips#change_status" 
   get 'confirmation', to: "pages#confirmation"
-  get 'inqueries', to: "trips#inqueries"
+  get 'inquiries', to: "trips#inquiries"
 end

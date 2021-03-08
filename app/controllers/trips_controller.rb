@@ -31,7 +31,7 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
   end
 
-  def inqueries
+  def inquiries
     @user = current_user
     @trips = Trip.where(user: current_user).where(sent: true)
   end
