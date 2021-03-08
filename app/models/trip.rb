@@ -7,7 +7,7 @@ class Trip < ApplicationRecord
   accepts_nested_attributes_for :travel_styles
   validates :start_date, :end_date, :adults, presence: true
 
-  # before_save :create_trip_stops
+  before_save :create_trip_stops
 
   private
 
@@ -18,7 +18,7 @@ class Trip < ApplicationRecord
 
     sample_itinerary.stops.each do |stop|
       trip_stops.create(
-        accommodation: stop.accomodation,
+        accommodation: stop.accommodation,
         nights: stop.nights
       )
     end
