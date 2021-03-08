@@ -23,7 +23,7 @@ class TripsController < ApplicationController
   def update
     @trip = Trip.find(params[:id])
     @trip.update(trip_params)
-    redirect_to sample_itineraries_path
+    redirect_to trip_sample_itineraries_path(@trip)
   end
 
   def show

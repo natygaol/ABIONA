@@ -1,38 +1,16 @@
-<div class="container">  
-  <div class="card-product">
-    <img src="https://www.safaris-intanzania.com/wp-content/uploads/2018/12/lion-male-safari-tanzania.jpg" />
-    <div class="card-product-infos">
-      <h2>The classic Tanzannian bush & beach safari</h2>
-      <h3>Tanzania</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adscing elit. Id sed arcu in pretium a dignissim faucibus etiam a. Integer condimentum ultrices ut quam qua <strong>relevant info</strong> only.</p>
-      <h4>Tarangire - Ngorongoro - Serengeti - Zanzibar</h4>
-      <h5>13 night trip - Flexible</h5>
-      <h6>USD 10.000 aprox</h6>
-      <%= link_to  "Learn more", trip_path(1), class:"btn btn-ghost" %>
+<div class="container">
+  <% @sample_itineraries.each do |sample_itinerary| %>
+    <div class="card-product">
+      <%= cl_image_tag(sample_itinerary.photo.key) %>
+      <div class="card-product-infos">
+        <h2><%= sample_itinerary.title %></h2>
+        <h3>Tanzania</h3>
+        <p><%= sample_itinerary.description %></p>
+        <h4><%= sample_itinerary.stops.map { |stop| stop.place }.join(" - ") %></h4>
+        <h5><%= sample_itinerary.total_nights %> nights trip - Flexible</h5>
+        <h6>USD <%= rand(9000..12000) %> aprox</h6>
+        <%= link_to "Learn more", root_path, class: "btn btn-ghost" %>
+      </div>
     </div>
-  </div>
-  <div class="card-product">
-    <img src="https://www.safaris-intanzania.com/wp-content/uploads/2018/12/lion-male-safari-tanzania.jpg" />
-    <div class="card-product-infos">
-      <h2>The classic Tanzannian bush & beach safari</h2>
-      <h3>Tanzania</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adscing elit. Id sed arcu in pretium a dignissim faucibus etiam a. Integer condimentum ultrices ut quam qua <strong>relevant info</strong> only.</p>
-      <h4>Tarangire - Ngorongoro - Serengeti - Zanzibar</h4>
-      <h5>13 night trip - Flexible</h5>
-      <h6>USD 10.000 aprox</h6>
-      <%= link_to  "Learn more", trip_path(1), class:"btn btn-ghost" %>
-    </div>
-  </div>
-  <div class="card-product">
-    <img src="https://www.safaris-intanzania.com/wp-content/uploads/2018/12/lion-male-safari-tanzania.jpg" />
-    <div class="card-product-infos">
-      <h2>The classic Tanzannian bush & beach safari</h2>
-      <h3>Tanzania</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adscing elit. Id sed arcu in pretium a dignissim faucibus etiam a. Integer condimentum ultrices ut quam qua <strong>relevant info</strong> only.</p>
-      <h4>Tarangire - Ngorongoro - Serengeti - Zanzibar</h4>
-      <h5>13 night trip - Flexible</h5>
-      <h6>USD 10.000 aprox</h6>
-      <%= link_to  "Learn more", trip_path(1), class:"btn btn-ghost" %>
-    </div>
-  </div>
+  <% end %>
 </div>
