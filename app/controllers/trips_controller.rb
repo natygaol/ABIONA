@@ -8,10 +8,7 @@ class TripsController < ApplicationController
   def create
     @trip = Trip.new(trip_params)
     @trip.user = current_user
-    @trip.children_price = 100
-    @trip.adult_price = 200
     @trip.sent = false #eventualmente esto hay que ponerlo en el modelo y schema
-    @trip.total_days = (@trip.end_date - @trip.start_date).to_i * @trip.children_price + (@trip.end_date - @trip.start_date).to_i * @trip.adult_price
     if @trip.save
       redirect_to edit_trip_path(@trip)
     else
