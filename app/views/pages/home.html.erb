@@ -1,14 +1,14 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0),rgba(20,24,22,1) 92%), url(https://www.kibokolandadventures.com/wp-content/uploads/2019/02/Tanzania-Safari-Tour.jpg);">
-  <div class="container">
+<div class="banner row" style="background-image: linear-gradient(rgba(0,0,0,0),rgba(20,24,22,1) 92%), url(https://www.kibokolandadventures.com/wp-content/uploads/2019/02/Tanzania-Safari-Tour.jpg);">
+  <div class="container p-sm-3">
     <h1>Design your dream safari online</h1>
     <p>Tell us what you like and we´ll recommend a custom adventure in Tanzania</p>
-     <%= link_to  "Start", new_trip_path, class:"btn btn-primary mr-5" %>
+    <%= link_to  "Start", new_trip_path, :method => :get, class:"btn btn-primary mr-5" %>
   </div>
 </div>
 
-<div class="container">
+<div class="container-fluid p-5">
   <div class="row justify-content-center">
-    <div class="text-center col-sm-8 mb-3">
+    <div class="text-center mb-3">
       <h2><strong>Tanzania</strong></h2>
       <p class="text-justify">
         Your true ‘Out of Africa’ destination, Northern Tanzania is home to the world’s most spectacular wilderness
@@ -47,11 +47,11 @@
   </div>
 </div>
 
-<div class="banner" style="background-image: url('<%= image_path 'jirafa.jpg' %>');">
-  <div class="container">
+<div class="banner m-0" style="background-image: url('<%= image_path 'jirafa.jpg' %>');">
+  <div class="container-fluid">
     <div class="card-product" style="background-color: transparent">
-      <img src="http://www.salkantaytrekking.com/images/tripadvisor-500x297.png" />
-      <div class="card-product-infos">
+      <img id="trip-advisor-logo" src="http://www.salkantaytrekking.com/images/tripadvisor-500x297.png" />
+      <div class="card-product-infos d-none d-md-block">
         <h1 style="text-shadow: 1px 1px 2px black">We work with the best</h1>
         <h2>Wayo Africa is our partner on the ground and will take care of you from the moment you arrive in Tanzania.
           Combine comfort and style with amazing views and a close to nature experience. The stunning Green Camps are right in the heart of nature at privileged locations.
@@ -63,7 +63,7 @@
   
 </div>
 
-<div class="container">
+<div class="container-fluid">
   <div class="explore my-5 row justify-content-center">
     <h1>How Abiona works</h1> 
   </div>
@@ -88,7 +88,7 @@
         </div>        
       </div>      
     </div>
-    <div class="explore my-5 row justify-content-center">      
+    <div class="explore my-5 row justify-content-center mx-0">      
       <%= link_to "Design your safari", new_trip_path, class: "btn btn-primary" %>
     </div>    
 </div>

@@ -1,4 +1,5 @@
 import { counter } from '../components/counter';
+import { price } from '../plugins/price';
 
 const dateTripCounter = () => {
   /* Adults counter */
@@ -14,5 +15,8 @@ const dateTripCounter = () => {
   const hiddenNumberPlace2 = document.querySelector("#trip_children");
   counter(numberPlace2, plusButton2, restButton2, hiddenNumberPlace2);
 };
+
+ /* Total Invoice */
+
 
 export { dateTripCounter };
