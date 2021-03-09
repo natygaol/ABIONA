@@ -2,7 +2,7 @@ class TripsController < ApplicationController
 #  skip_before_action :authenticate_user!, only: [:new, :create, :edit, :update]
 
   def new
-    @trip = Trip.new(children_price: 100, adult_price: 200)
+    @trip = Trip.new
   end
 
   def create

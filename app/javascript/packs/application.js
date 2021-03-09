@@ -31,5 +31,5 @@ import { price } from '../plugins/price';
 document.addEventListener('turbolinks:load', () => {
   dateTripCounter();
   initFlatpickr();
-  price();
+  // price();
 });

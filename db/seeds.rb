@@ -13,7 +13,7 @@ Accommodation.destroy_all
 Stop.destroy_all
 Activity.destroy_all
 User.destroy_all
-
+#revisar los destroy.all
 
 
 # Travel Styles:
@@ -49,7 +49,7 @@ ACCOMMODATIONS.each do |accomodation_name, accommodation_hash|
 end
 
 SAMPLE_ITINERARIES.each do |name, sample_itinerary_hash|
-  sample_itinerary = SampleItinerary.new(title: sample_itinerary_hash[:title], description: sample_itinerary_hash[:description])
+  sample_itinerary = SampleItinerary.new(title: sample_itinerary_hash[:title], description: sample_itinerary_hash[:description], children_price_per_night: sample_itinerary_hash[:children_price_per_night], adult_price_per_night: sample_itinerary_hash[:adult_price_per_night])
   file = URI.open(sample_itinerary_hash[:image])
   sample_itinerary.photo.attach(io: file, filename: sample_itinerary_hash[:title], content_type: 'image/png')
   puts "Adding stops to: '#{sample_itinerary.title}'"
@@ -125,32 +125,5 @@ end
   #   sample_itinerary_travel_style.save
   #   puts "  -#{travel_style.title}"
   # end
-
-# ejemplo de naty
-# TravelStyle.destroy_all
-# User.destroy_all
-
-# TRAVEL_STYLES = [{title: "wilderness",
-#   picture: "https://wayoafrica.com/uploads/news/id75/32.png"}, 
-#   {title: "luxury",
-#   picture: "https://wayoafrica.com/uploads/news/id89/2-olivers-double-room-en-suite.jpg"},
-#   {title: "honeymoon",
-#   picture: "https://wayoafrica.com/uploads/news/id45/Gibbs-Farm-Bustani-House-from-above.jpg"},
-#   {title: "family",
-#   picture: "https://www.mangoafricansafaris.com/images/blogimg_3256"},
-#   {title: "lodge",
-#   picture: "https://wayoafrica.com/uploads/news/id78/Tarangire-Safari-Lodge-Terrace.jpg"},
-#   {title: "adventure",
-#   picture: "https://wayoafrica.com/uploads/news/id89/2-olivers-double-room-en-suite.jpg"},
-# ]
-
-
-# puts 'Creating travel styles and fake users...'
-
-# TRAVEL_STYLES.each do |hash|
-#   TravelStyle.create(picture: hash[:picture], title: hash[:title])
-# end
-
-# puts 'Finished!'
 
 

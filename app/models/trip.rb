@@ -17,7 +17,6 @@ class Trip < ApplicationRecord
     return nil unless sample_itinerary.present?
     (end_date - start_date).to_i * sample_itinerary.children_price_per_night +
       (end_date - start_date).to_i * sample_itinerary.adult_price_per_night
-  
   end
 
   private
@@ -34,3 +33,4 @@ class Trip < ApplicationRecord
       )
     end
   end
+end
