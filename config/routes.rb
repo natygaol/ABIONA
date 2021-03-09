@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   get 'confirmation', to: "pages#confirmation"
   get 'trips/:id/generate', to: "trips#generate_trip_stops", as: :generate
   get 'trips/:id/customize', to: "trips#customize", as: :customize
+  post 'trip_stops/:id/increase_nights', to: "trip_stops#increase_nights", as: :increase_nights
+  post 'trip_stops/:id/decrease_nights', to: "trip_stops#decrease_nights", as: :decrease_nights
 end

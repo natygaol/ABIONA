@@ -31,3 +31,5 @@ document.addEventListener('turbolinks:load', () => {
   dateTripCounter();
   initFlatpickr();
 });
+
+import "controllers"
