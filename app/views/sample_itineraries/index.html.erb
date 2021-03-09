@@ -9,7 +9,7 @@
         <h4><%= sample_itinerary.stops.map { |stop| stop.place }.join(" - ") %></h4>
         <h5><%= sample_itinerary.total_nights %> nights trip - Flexible</h5>
         <h6>USD <%= rand(9000..12000) %> aprox</h6>
-        <%= link_to "Learn more", root_path, class: "btn btn-ghost" %>
+        <%= link_to "Learn more", generate_path(@trip, sample_itinerary_id: sample_itinerary.id), class: "btn btn-ghost" %>
       </div>
     </div>
   <% end %>
