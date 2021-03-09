@@ -134,11 +134,11 @@ ActiveRecord::Schema.define(version: 2021_03_09_142008) do
     t.boolean "sent"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.integer "sample_itinerary_id"
     t.integer "children_price"
     t.integer "adult_price"
     t.date "total_days"
-    t.bigint "user_id", null: false
-    t.integer "sample_itinerary_id"
     t.index ["user_id"], name: "index_trips_on_user_id"
   end
 
