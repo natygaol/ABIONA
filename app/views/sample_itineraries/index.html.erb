@@ -5,7 +5,7 @@
       <div class="card-product-infos">
         <h2><%= sample_itinerary.title %></h2>
         <h3>Tanzania</h3>
-        <p><%= sample_itinerary.description %></p>
+        <p class="my-2"><%= sample_itinerary.description %></p>
         <h4><%= sample_itinerary.stops.map { |stop| stop.place }.join(" - ") %></h4>
         <h5><%= sample_itinerary.total_nights %> nights trip - Flexible</h5>
         <h6>USD <%= rand(9000..12000) %> aprox</h6>
