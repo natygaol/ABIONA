@@ -1,12 +1,11 @@
-<div class="bg-white mb-4">
-  <h1 class="text-center p-5 ">When and with whom are<br> you travelling?</h1>
-  <div class= "container d-flex justify-content-center">
-  <div id="box" class="mr-4">
-      <%= simple_form_for @trip do |t| %>
-      <%= t.input :start_date, as: :hidden, required: false, input_html: { id:"range_start" } %>
-      <div class="d-none"><%= t.input :end_date, as: :hidden, required: false, input_html: { id:"range_end" } %></div>
+<h1 class="text-center p-5 ">When and with whom are<br> you travelling?</h1>
+<div class= "container-fluid" id="boxes-new">
+  <div id="box" class="responsive-margin-bottom">
+    <%= simple_form_for @trip do |t| %>
+    <%= t.input :start_date, as: :hidden, required: false, input_html: { id:"range_start" } %>
+    <div class="d-none"><%= t.input :end_date, as: :hidden, required: false, input_html: { id:"range_end" } %></div>
   </div>
-  <div id="box" class="align-items-center d-flex justify-content-center ml-4 pb-5">
+  <div id="box" class="align-items-center d-flex justify-content-center">
     <div> 
       <div id="date-field" class="mb-4 d-flex align-items-center justify-content-between">
         <div class="ml-5"><strong>Adults</strong></div>
@@ -32,12 +31,11 @@
       </div> -->
     </div>
   </div>
-  </div>
-  <div class="d-flex justify-content-center p-5">
-    <%= link_to  "Back", root_path, class:"btn btn-outline-secondary mr-5" %>
-    <div class="d-none"><%= t.input :adults, :as => :hidden %></div>
-    <div class="d-none"><%= t.input :children, :as => :hidden %></div>
-    <%= t.submit "Next", :class => "btn btn-primary" %>
-    <% end %>
-  </div>
+</div>
+<div class="d-flex justify-content-center p-5">
+  <%= link_to  "Back", root_path, class:"btn btn-outline-secondary mr-5" %>
+  <div class="d-none"><%= t.input :adults, :as => :hidden %></div>
+  <div class="d-none"><%= t.input :children, :as => :hidden %></div>
+  <%= t.submit "Next", :class => "btn btn-primary" %>
+  <% end %>
 </div>
