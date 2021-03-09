@@ -22,3 +22,10 @@
 .separador {
   margin-top: 20px;
 }
+
+@media(max-width: 500px) {
+  #trip-advisor-logo {
+    width: 100%;
+    object-fit: contain;
+  }
+}
