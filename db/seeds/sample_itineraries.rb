@@ -26,5 +26,5 @@ SAMPLE_ITINERARIES = {
     children_price_per_night: "105",
     adult_price_per_night: "215",
     travel_styles: ["Beach", "Active", "Walking"],
-    image: "http://www.explorasafaris.com/wp-content/uploads/2014/11/safari-por-africa.jpg"}
+    image: "http://www.kilimanjaroheroes.com/wp-content/uploads/2017/05/giraffe-9.jpg"}
 }
