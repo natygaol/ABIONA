@@ -9,10 +9,11 @@ require_relative 'seeds/travel_styles'
 puts "Clearing database"
 SampleItineraryTravelStyle.destroy_all
 SampleItinerary.destroy_all
-TravelStyle.destroy_all
 Accommodation.destroy_all
 Stop.destroy_all
 Activity.destroy_all
+User.destroy_all
+
 
 
 # Travel Styles:
@@ -76,6 +77,13 @@ SAMPLE_ITINERARIES.each do |name, sample_itinerary_hash|
  end
 end
 
+puts "Creado usuario Pepito Flores"
+User.create(email: "PepitoFLores@email.com", password: "123123", first_name: "Pepito", last_name: "Flores")
+pepito = User.find_by(first_name: "Pepito") 
+3.times do
+  puts "Asigando inqueries a Pepito"
+  Trip.create(start_date: Date.today, end_date: Date.tomorrow, adults: rand(1..5), children: rand(0..4), sent: true, user_id: pepito.id)
+end
 # # SampleItineraries and its stops & travel_style
 # SAMPLE_ITINERARIES.each do |name, sample_itinerary_hash|
 #   sample_itinerary = SampleItinerary.new(title: sample_itinerary_hash[:title], description: sample_itinerary_hash[:description])
@@ -118,7 +126,7 @@ end
   #   puts "  -#{travel_style.title}"
   # end
 
-# ======= ejemplo de naty
+# ejemplo de naty
 # TravelStyle.destroy_all
 # User.destroy_all
 
@@ -144,5 +152,5 @@ end
 # end
 
 # puts 'Finished!'
-# >>>>>>> master
+
 

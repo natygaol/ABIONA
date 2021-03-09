@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2021_03_08_161407) do
+=======
+ActiveRecord::Schema.define(version: 2021_03_08_145950) do
+>>>>>>> master
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -132,10 +136,15 @@ ActiveRecord::Schema.define(version: 2021_03_08_161407) do
     t.boolean "sent"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+<<<<<<< HEAD
     t.bigint "user_id"
     t.integer "children_price"
     t.integer "adult_price"
     t.date "total_days"
+=======
+    t.bigint "user_id", null: false
+    t.integer "sample_itinerary_id"
+>>>>>>> master
     t.index ["user_id"], name: "index_trips_on_user_id"
   end
 
