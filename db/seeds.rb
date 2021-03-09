@@ -7,6 +7,7 @@ require_relative 'seeds/stops'
 require_relative 'seeds/travel_styles'
 
 puts "Clearing database"
+TripStyle.destroy_all
 SampleItineraryTravelStyle.destroy_all
 SampleItinerary.destroy_all
 Accommodation.destroy_all
