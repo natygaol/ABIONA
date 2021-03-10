@@ -1,5 +1,4 @@
 class TripsController < ApplicationController
-#  skip_before_action :authenticate_user!, only: [:new, :create, :edit, :update]
 
   def new
     @trip = Trip.new
@@ -65,16 +64,6 @@ class TripsController < ApplicationController
   def customize
     @trip = Trip.find(params[:id])
   end
-
-  # def trip_status
-  #   @trip = Trip.find(params[:id])
-  #   @trip.status = true
-  #   if @trip.save!
-  #     redirect_to confirmation_path
-  #   else 
-  #     render :show
-  #   end
-  # end
 
   private
 
