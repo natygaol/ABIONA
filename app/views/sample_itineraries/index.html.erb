@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container py-5">
   <% @sample_itineraries.each do |sample_itinerary| %>
     <div class="card-product">
       <%= cl_image_tag(sample_itinerary.photo.key) %>
@@ -6,10 +6,10 @@
         <h2><%= sample_itinerary.title %></h2>
         <h3>Tanzania</h3>
         <p class="my-2"><%= sample_itinerary.description %></p>
-        <h4><%= sample_itinerary.stops.map { |stop| stop.place }.join(" - ") %></h4>
-        <h5><%= sample_itinerary.total_nights %> nights trip - Flexible</h5>
-        <h6>USD <%= rand(9000..12000) %> aprox</h6>
-        <%= link_to "Learn more", generate_path(@trip, sample_itinerary_id: sample_itinerary.id), class: "btn btn-ghost" %>
+        <h4 class="py-1"><%= sample_itinerary.stops.map { |stop| stop.place }.join(" - ") %></h4>
+        <h5 class="py-1"><%= sample_itinerary.total_nights %> nights trip - Flexible</h5>
+        <h6 class="py-1">USD <%= rand(9000..12000) %> aprox</h6>
+        <%= link_to "Learn more", generate_path(@trip, sample_itinerary_id: sample_itinerary.id), class: "btn btn-ghost mt-3" %>
       </div>
     </div>
   <% end %>
