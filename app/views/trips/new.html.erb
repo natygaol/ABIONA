@@ -1,6 +1,6 @@
 <h1 class="text-center p-5 ">When and with whom are<br> you travelling?</h1>
 <div class= "container-fluid" id="boxes-new">
-  <div id="box" class="responsive-margin-bottom">
+  <div id="box" class="responsive-margin-bottom align-items-center d-flex justify-content-center">
     <%= simple_form_for @trip do |t| %>
     <%= t.input :start_date, as: :hidden, required: false, input_html: { id:"range_start" } %>
     <div class="d-none"><%= t.input :end_date, as: :hidden, required: false, input_html: { id:"range_end" } %></div>
