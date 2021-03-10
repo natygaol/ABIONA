@@ -27,6 +27,11 @@
   align-items: center;
 }
 
+.plus-and-less-button a {
+  text-decoration: none;
+  color: primary;
+}
+
 .plus-and-less-button:hover {
   cursor: pointer;
   width: 20px;
