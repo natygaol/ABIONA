@@ -66,16 +66,6 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
   end
 
-  # def trip_status
-  #   @trip = Trip.find(params[:id])
-  #   @trip.status = true
-  #   if @trip.save!
-  #     redirect_to confirmation_path
-  #   else 
-  #     render :show
-  #   end
-  # end
-
   private
 
   def trip_params
