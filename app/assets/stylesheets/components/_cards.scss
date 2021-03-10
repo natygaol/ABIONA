@@ -17,6 +17,11 @@
     font-weight: bolder;
     font-size: 18px;
   }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
 }
 
 .gray-header {
@@ -90,7 +95,7 @@
 }
 
 .add-nights {
-  width: 250px;
+  width: 60%;
   height: 50px;
   border-radius: 100px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.247);
@@ -98,7 +103,7 @@
   background-color: white;
   position: absolute;
   bottom: -40px;
-  left: 70px;
+  left: 20%;
 }
 
 .nights-text {
