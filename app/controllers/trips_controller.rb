@@ -35,27 +35,29 @@ class TripsController < ApplicationController
     @user = current_user
     @trips = Trip.where(user: current_user).where(sent: true)
   end
-    
+  
   def generate_trip_stops
-    #1 find trip
+    # 1 find trip
     trip = Trip.find(params[:id])
-    #aqui podria ir un if para evitar que se corra este metodo cuando ya se corrió
-    #2 generate trip stops and its activities
-      #a. find respective sample itinery
+    if trip.trip_stops.blank?
+    # 2 generate trip stops and its activities
+      # a. find respective sample itinery
       sample_itinerary = SampleItinerary.find(params[:sample_itinerary_id])
-      #b. find its stops and iterate over them
-      sample_itinerary.stops.each do |stop|    
-        #c. generating trip stops
+      trip.update(sample_itinerary: sample_itinerary)
+      # b. find its stops and iterate over them
+      sample_itinerary.stops.each do |stop|
+        # c. generating trip stops
         trip_stop = TripStop.new
         trip_stop.accommodation = stop.accommodation
         trip_stop.trip = trip
         trip_stop.nights = stop.nights
         trip_stop.save!
-        #d. for each trip stop add the corresponding activities(given the accommodation)
+        # d. for each trip stop add the corresponding activities(given the accommodation)
         stop.accommodation.activities.first(trip_stop.nights * 2).each do |activity|
           trip_stop_activity = TripStopActivity.create!(trip_stop: trip_stop, activity: activity)
         end
       end
+    end
     #3 save all
     redirect_to customize_path(trip)
   end
