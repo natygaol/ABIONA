@@ -13,12 +13,4 @@ class PagesController < ApplicationController
 
   def home
   end
-
-  # def sent_status
-  #   @trip = Trip.find(params[:id])
-  #   @trip.sent = true
-  #   @trip.save
-  #   redirect_to confirmation_path
-  # end
-
 end
