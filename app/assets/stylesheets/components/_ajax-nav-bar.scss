@@ -1,0 +1,33 @@
+.navbar-ajax {
+  // overflow: hidden;
+  // background-color:white;
+  display: none;
+  background-color: transparent;
+  transition: 0.5s background-color ease;
+  position: fixed; /* Set the navbar to fixed position */
+  bottom: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  // padding: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  z-index: 999;
+}
+
+.navbar-ajax-white {
+  display: block;
+  background-color: white;
+  p {
+    float: left;
+    display: block;
+    color: #0E0000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 30px;
+  }
+  .p-8y-24x {
+    padding: 8px 24px;
+  }
+}
+
+/* Links inside the navbar */
+

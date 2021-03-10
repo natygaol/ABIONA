@@ -8,6 +8,7 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
@@ -20,11 +21,19 @@ ActiveStorage.start()
 
 // External imports
 import "bootstrap";
-
+import { initFlatpickr } from "../plugins/flatpickr";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+import { dateTripCounter } from '../components/date_trip_counter';
+import { initUpdateNavbarOnScroll } from '../components/navbar_ajax';
+import { price } from '../plugins/price';
+
 
 document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initSelect2();
+  dateTripCounter();
+  initFlatpickr();
+  initUpdateNavbarOnScroll();
+  // price();
 });
+
+import "controllers"
