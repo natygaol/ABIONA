@@ -10,7 +10,7 @@
 }
 
 #date-field {
-  width: 350px;
+  width: 284px;
   height: 60px;
   border-radius: 100px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.247);
@@ -50,11 +50,12 @@
   #box {
     background-color: rgb(255, 255, 255);
     width: 350px;
-    height: 150px;
+    height: 350px;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
   #date-field {
-    width: 350px;
     height: 60px;
     border-radius: 100px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.247);
@@ -83,6 +84,6 @@
   }
 
   .responsive-margin-bottom {
-    margin-bottom: 230px;
+    margin-bottom: 100px;
   }
 }

@@ -5,7 +5,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  margin: 2em;
+  margin-bottom: 2em;
   border-radius: 8px;
 }
 
@@ -13,6 +13,18 @@
   height: 100%;
   width: 400px;
   object-fit: cover;
+}
+
+@media(max-width: 500px) {
+  .card-product {
+    height: unset;
+    flex-direction: column;
+    img {
+      height: 100px;
+      width: 100%;
+      object-fit: cover;
+    }
+  }  
 }
 
 .card-product h2 {

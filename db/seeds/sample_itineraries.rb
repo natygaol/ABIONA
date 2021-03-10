@@ -18,7 +18,7 @@ SAMPLE_ITINERARIES = {
     description: "Immerse yourself with us in the culture of the American continent, tasting the exquisite foods, enjoying its beautiful beaches, in a trip with a lot of adventure and also relaxation.",
     children_price_per_night: "480",
     adult_price_per_night: "685",
-    travel_styles: ["Beach", "Gourmet", "Walking"],
+    travel_styles: ["Beach", "Gourmet", "Walking", "Family"],
     image: "http://www.explorasafaris.com/wp-content/uploads/2014/11/safari-por-africa.jpg"},
   couples_walking_safari: {
     title: "Remote Wilderness for Couples",
