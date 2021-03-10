@@ -10,14 +10,10 @@
   box-shadow: 0px 10px 30 #888888;
   background-color: white;
   margin: 40px 0px;
-  padding: 16px 8px;
+  padding: 16px 16px;
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  
-  h {
+    
+  h3 {
     font-weight: bolder;
     font-size: 18px;
   }
@@ -36,13 +32,13 @@
 }
 
 .accommodation-card {
-  width: 400px;
   height: 360px;
-  // overflow: hidden;
   border-radius: 15px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin: 2% 3%;
   position: relative;
+  padding-right: 0px;
+  padding-left: 0px;
 
   img {
     width: 100%;
@@ -54,16 +50,14 @@
 }
 
 .activity-container {
-  width: 560px;
-  height: 360px;
+  max-height: 360px;
   background: white;
   margin: 2% 3%;
 }
 
 .activity-card {
   overflow: hidden;
-  height: 240px;
-  width: 560px;
+  height: 80px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
@@ -75,7 +69,6 @@
 
 .activity-card img {
   height: 100%;
-  width: 40%;
   object-fit: cover;
 }
 
@@ -96,13 +89,6 @@
   padding: 16px;
 }
 
-#activity-btn {
-    width: 560px;
-    border-radius: 50px;
-    margin-top: 16px;
-    padding: 8px;
-}
-
 .add-nights {
   width: 250px;
   height: 50px;
@@ -118,3 +104,11 @@
 .nights-text {
     font-weight: bolder;
   }
+
+.overflow-scroll {
+  overflow: scroll;
+}
+
+.overflow-scroll::-webkit-scrollbar {
+  display: none;
+}
