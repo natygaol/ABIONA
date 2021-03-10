@@ -1,8 +1,8 @@
 <div class="container py-5">
   <% @sample_itineraries.each do |sample_itinerary| %>
-    <div class="card-product card-product-small">
+    <div class="card-product">
       <%= cl_image_tag(sample_itinerary.photo.key) %>
-      <div class="card-product-infos card-product-info-small">
+      <div class="card-product-infos">
         <h2><%= sample_itinerary.title %></h2>
         <h3>Tanzania</h3>
         <p class="my-2"><%= sample_itinerary.description %></p>
