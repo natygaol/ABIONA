@@ -52,21 +52,21 @@
   <% end %>
 </div>
 
-<div class="ajax-navbar">
+<div class="navbar-ajax">
   <div class="d-flex justify-content-around align-items-center">
     <div class="d-flex col-6 w-100">
       <div class="pt-2 w-100 ">
         <p class="m-0 "><strong class="text-center">Total Price </strong></p>
       </div>
       <div class="pt-2 w-100 ">
-        <p class="m-0 text-secondary text-center">$ 15.980</p>
+        <p class="m-0 text-secondary text-center">$ <%= @trip.total_price %></p>
       </div>
       
     </div>
     <!-- cambiar path -->
     <div class="d-flex col-6 w-100">
       <div class="pt-2 w-100 "><%= link_to  "Back", root_path, class:"btn btn-ghost w-100 my-2 mr-2 text-nowrap" %></div>
-      <div class="pt-2 w-100 "><%= link_to  "Check Availability", confirmation_path, class:"btn btn-primary w-100 my-2 ml-2 text-nowrap p-8y-24x" %></div>
+      <div class="pt-2 w-100 "><%= link_to  "Check Availability", trip_change_sent_status_path(@trip), method: :post, class:"btn btn-primary w-100 my-2 ml-2 text-nowrap p-8y-24x" %></div>
     </div>
   </div>
 </div>

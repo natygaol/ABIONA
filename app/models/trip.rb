@@ -7,6 +7,11 @@ class Trip < ApplicationRecord
   accepts_nested_attributes_for :travel_styles
   validates :start_date, :end_date, :adults, presence: true
 
+
+  def set_end_date!
+    self.end_date = start_date + trip_stops.reduce(0) { |accumulator, trip_stop| accumulator + trip_stop.nights }
+  end
+
   def total_price
     # 1 migration. anadir a sample itineraries las columnas de children_price_per_night & adult_price_per_night
     # 2 Actualizar las seeds // sample itineraries

@@ -12,6 +12,7 @@ SampleItinerary.destroy_all
 TravelStyle.destroy_all
 Accommodation.destroy_all
 Stop.destroy_all
+TripStopActivity.destroy_all
 Activity.destroy_all
 
 
