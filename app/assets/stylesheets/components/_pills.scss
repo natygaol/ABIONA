@@ -18,11 +18,12 @@
   border: 1px solid #00000027;
   margin-right: 0.6rem;
   margin-bottom: 0.4rem;
+  opacity: .6;
 }
 
 .tag-selector:checked + label {
   background-color: #343232;
-  color: white;
+  opacity: 1;
 }
 
 
