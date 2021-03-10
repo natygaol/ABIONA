@@ -5,7 +5,9 @@ class TripStopsController < ApplicationController
     @trip_stop = TripStop.find(params[:id])
     @trip_stop.increase_one_night!
     @trip_stop.save
-    # @trip_stop.trip.update(end_date: start_date + trip.trip_stops.reduce(0) { |accumulator, trip_stop| accumulator + trip_stop.nights })
+    trip = @trip_stop.trip
+    trip.set_end_date!
+    trip.save!
     redirect_to customize_path(@trip_stop.trip, anchor: "trip-stop-#{@trip_stop.id}")
   end
 
@@ -13,7 +15,9 @@ class TripStopsController < ApplicationController
     @trip_stop = TripStop.find(params[:id])
     @trip_stop.decrease_one_night!
     @trip_stop.save
-    # @trip_stops.trip.update(end_date: start_date + trip.trip_stops.reduce(0) { |accumulator, trip_stop| accumulator + trip_stop.nights })
+    trip = @trip_stop.trip
+    trip.set_end_date!
+    trip.save!
     redirect_to customize_path(@trip_stop.trip, anchor: "trip-stop-#{@trip_stop.id}")
   end
 

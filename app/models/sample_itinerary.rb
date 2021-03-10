@@ -5,8 +5,6 @@ class SampleItinerary < ApplicationRecord
   has_one_attached :photo
 
   def total_nights
-    stops.map { |stop| stop.nights }.sum  
+    stops.map { |stop| stop.nights }.sum
   end
-  
 end
-
