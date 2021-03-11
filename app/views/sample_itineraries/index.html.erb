@@ -1,5 +1,6 @@
 <h1 class="text-center mt-5"><strong>What we recommend for you </strong></h1>
-<p class="text-center mb-5" id="titulo-secundario">Based on your selection of <%= @trip.travel_style_ids%></p>
+
+<p class="text-center mb-5" id="titulo-secundario">Based on your selection of <%= @values.join(", ")  %> </p>
     <% @sample_itineraries.each do |sample_itinerary| %>
     <div class="container">
       <div class="card-product" id="sample-itinerario-card-product">
@@ -10,7 +11,7 @@
         <div class="card-agrupado">
           <div class="grupo-izquierda d-flex">
           <!-- grupo 1 del card superior izquierda-->
-            <div class="details-product pl-2">
+            <div class="details-product pl-3">
               <h2><%= sample_itinerary.title %></h2>
               <p style="margin-top: -0.5px">Tanzania</p>
               <p><%= sample_itinerary.description %></p>
@@ -28,7 +29,7 @@
           <!-- grupo container bottom-->
           <div class="container-grupo-abajo d-flex">
             <!-- grupo bottom right-->
-            <div class="ruta pl-2">
+            <div class="ruta pl-3">
               <h4 class="py-1"><%= sample_itinerary.stops.map { |stop| stop.place }.join(" - ") %></h4>
             </div>
             <!-- grupo bottom left-->
