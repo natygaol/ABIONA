@@ -1,4 +1,4 @@
-.navbar-lewagon {
+.navbar {
   justify-content: space-between;
   background: rgb(40,39,39);
   background: linear-gradient(90deg, rgba(40,39,39,1) 36%, rgba(48,46,46,1) 68%);
@@ -19,10 +19,21 @@
   }
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar .navbar-collapse {
   flex-grow: 0;
 }
 
 .logo-navbar {
   width: 40px;
+}
+
+.mobile-navbar {
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: $green;
+  }
 }
