@@ -1,1 +1,60 @@
 // Specific CSS for your home-page
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.five-stars {
+  font-size: 64px;
+  color: white;
+
+  // :hover {
+  //   color: green;
+  // }
+}
+
+.container-banner-midpage {
+  margin: auto;
+  text-align: center;
+}
+
+.step-by-step-card {
+  height: 400px;
+  max-width: 320px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 0% 2% 2% 2%;
+  background-color: white;
+  position: relative;
+
+  img {
+    display: block;
+    width: 50%;
+    object-fit: cover;
+    margin-top: 20%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  h4 {
+    text-align: center;
+    margin-top: 32px;
+    font-weight: bold;
+  }
+
+  h5 {
+    text-align: center;
+    margin-top: 16px;
+    padding-right: 15%;
+    padding-left: 15%;
+  }
+}
+
+.step-by-step-text {
+    position: absolute;
+    top: 45%;
+  }
