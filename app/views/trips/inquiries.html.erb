@@ -1,22 +1,24 @@
-<h1 class="text-center p-5">My inquiries</h1>
+<div class="text-center d-block pb-1 m-5 border-bottom">
+  <h1><strong>My inquiries</strong></h1>
+  <h4>Thank you for choosing Abiona</h4>
+</div>
 <div class="container">
   <% if @trips.first.nil? %>
     <h2 class="text-center  vh-85">It looks like you don't have inquiries yet =(</h2>
   <% else %>
-  <div class="row">
+  <div class="row d-flex justify-content-between ">
     <% @trips.each do |trip| %>
-        <div class="col-12 col-md-4 mb-3 mb-5">
-            <div class="bg-white shadow rounded p-5 text-center">
-              <%= cl_image_tag trip.sample_itinerary.photo.key, class: "img-fluid rounded" if trip.sample_itinerary && trip.sample_itinerary.photo.attached? %>
-              <div class="pt-3">
-                <p class="m-2"><strong>Start date:</strong> <%= trip.start_date %></p>
-                <p class="m-2"><strong>End date:</strong> <%= trip.end_date %></p>
-                <p class="m-2"><strong>Number of adults:</strong> <%= trip.adults %></p>
-                <p class="m-2"><strong>Number of Children:</strong> <%= trip.children %></p>
-                <p class="m-2"><strong>Total price:</strong> <%= trip.total_price %></p>
-              </div>
-            </div>
+      <div class="col-12 col-md-3 mb-5 bg-white shadow px-0 justify-content-center" id="border-radius-inquirie">
+      <div class=" py-2 d-block text-white text-center shadow" id="sent-card-inquirie">Sent <i class="far fa-smile-wink"></i></div>
+        <%= cl_image_tag trip.sample_itinerary.photo.key, class: "img-fluid shadow" if trip.sample_itinerary && trip.sample_itinerary.photo.attached? %>
+        <div class="py-3 text-left mx-5">
+          <p class="m-2"><strong>Start date:</strong> <%= (trip.start_date).strftime("%B %d") %></p>
+          <p class="m-2"><strong>Total nights:</strong> <%= trip.total_nights %></p>
+          <p class="m-2"><strong>Total price:</strong> $<%= trip.total_price %></p>
+          <p class="m-2"><strong>Number of adults:</strong> <%= trip.adults %></p>
+          <p class="m-2"><strong>Number of Children:</strong> <%= trip.children %></p>
         </div>
+      </div>
     <% end %> 
   </div>
   <% end %>
