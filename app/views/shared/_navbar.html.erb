@@ -1,36 +1,30 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to  "Abiona", root_path, class:"logo font-weight-bold text-decoration-none" %>
+  <%= link_to  root_path, class:"logo-navbar" do %>
+    <%= image_tag "https://res.cloudinary.com/dafd6bi7v/image/upload/v1615474267/logo/Color_logo_-_no_background_t07gka.png" %>
+  <% end %>
+
   <div class="d-none d-md-block">
     <div class="align-items-center d-flex justify-content-center">
-      <%= link_to  "My Trips", inquiries_path, class: "mr-3 text-white text-decoration-none" %>
-      <div class="mr-3"><%= link_to  "Start", new_trip_path, class:"btn btn-outline-primary" %></div>
+      <%= link_to  "My Trips", inquiries_path, class: "mr-3" %>
         <% if user_signed_in? %>
-          <%= link_to  "Log Out", destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
-        <% else %>
-          <%= link_to  "Log in", user_session_path, class: "btn btn-primary" %>
+          <%= link_to  "Log Out", destroy_user_session_path, method: :delete %>
         <% end %>
     </div>
   </div>
-  <div class="d-block d-md-none">
-  <button class="navbar-toggler toggler-example d-md-none" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"><span class="text-white text-center"><i class="fas fa-bars fa-1x"></i></span></button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent1">
-    <div class="d-flex justify-content-center">
-    <ul class="navbar-nav">
-      <li class="nav-item active p-5">
-        <%= link_to  "My Trips", inquiries_path, class: "text-white text-decoration-none vw-100" %>
-      </li>
-      <li class="nav-item p-5">
-      <%= link_to  "Start", new_trip_path, class:"text-white text-decoration-none vw-100" %>
-      </li>
-      <li class="nav-item p-5">
-        <% if user_signed_in? %>
-          <%= link_to  "Log Out", destroy_user_session_path, method: :delete, class: "text-white text-decoration-none vw-100" %>
-        <% else %>
-          <%= link_to  "Log in", user_session_path, class: "text-white text-decoration-none vw-100" %>
-        <% end %>
-      </li>
-    </ul>
-    </div>
-  </div>
+
+  <div class="d-block d-md-none mobile-navbar">
+    <% if user_signed_in? %>
+      <button class="navbar-toggler toggler-example d-md-none" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="text-white text-center"><i class="fas fa-bars fa-1x"></i></span></button>
+      <div class="collapse navbar-collapse pb-3" id="navbarSupportedContent">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page"><%= link_to  "My Trips", inquiries_path, class: "mobile-navbar vw-100" %></a>
+            <a class="nav-link">
+              <%= link_to  "Log Out", destroy_user_session_path, method: :delete, class: "mobile-navbar vw-100" %>
+            </a>
+        </div>
+      </div>
+    <% else %>
+      <%= link_to  "My Trips", inquiries_path, class: "mobile-navbar vw-100" %>
+    <% end %>
   </div>
 </div>
