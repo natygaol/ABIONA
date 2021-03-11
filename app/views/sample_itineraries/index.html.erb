@@ -1,16 +1,43 @@
-<div class="container py-5">
-  <% @sample_itineraries.each do |sample_itinerary| %>
-    <div class="card-product">
-      <%= cl_image_tag(sample_itinerary.photo.key) %>
-      <div class="card-product-infos">
-        <h2><%= sample_itinerary.title %></h2>
-        <h3>Tanzania</h3>
-        <p class="my-2"><%= sample_itinerary.description %></p>
-        <h4 class="py-1"><%= sample_itinerary.stops.map { |stop| stop.place }.join(" - ") %></h4>
-        <h5 class="py-1"><%= sample_itinerary.total_nights %> nights trip - Flexible</h5>
-        <h6 class="py-1">USD <%= rand(9000..12000) %> aprox</h6>
-        <%= link_to "Learn more", generate_path(@trip, sample_itinerary_id: sample_itinerary.id), class: "btn btn-ghost mt-3" %>
+<h1 class="text-center mt-5"><strong>What we recommend for you </strong></h1>
+<p class="text-center mb-5" id="titulo-secundario">Based on your selection of <%= @trip.travel_style_ids%></p>
+    <% @sample_itineraries.each do |sample_itinerary| %>
+    <div class="container">
+      <div class="card-product" id="sample-itinerario-card-product">
+        <div class="foto">
+            <%= cl_image_tag(sample_itinerary.photo.key) %>      
+        </div>
+
+        <div class="card-agrupado">
+          <div class="grupo-izquierda d-flex">
+          <!-- grupo 1 del card superior izquierda-->
+            <div class="details-product pl-2">
+              <h2><%= sample_itinerary.title %></h2>
+              <p style="margin-top: -0.5px">Tanzania</p>
+              <p><%= sample_itinerary.description %></p>
+            </div>
+            <!-- grupo 2 del card superior derecha-->
+            <div class="details-price pr-3">
+              <p class="text-right" style="margin-bottom: 3px"><%= sample_itinerary.total_nights %> nights trip - Flexible</p>
+              <h3 class="text-right pt-1">USD <%= rand(9000..12000) %> </h3>
+              <h4 class="text-right">Approx price</h4>
+            </div>
+          </div>
+          
+          <div style="height:70px"></div>
+
+          <!-- grupo container bottom-->
+          <div class="container-grupo-abajo d-flex">
+            <!-- grupo bottom right-->
+            <div class="ruta pl-2">
+              <h4 class="py-1"><%= sample_itinerary.stops.map { |stop| stop.place }.join(" - ") %></h4>
+            </div>
+            <!-- grupo bottom left-->
+            <div class="boton-customize pr-3 text-right">
+              <%= link_to "Customize Trip", generate_path(@trip, sample_itinerary_id: sample_itinerary.id), class: "btn btn-ghost" %>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  <% end %>
-</div>
+    <div class="mb-5"></div>
+    <% end %>
