@@ -4,7 +4,7 @@
   }
 
 #box {
-  background-color: rgb(255, 255, 255);
+  background-color: $light-gray;
   width: 350px;
   height: 400px;
 }
@@ -13,8 +13,9 @@
   width: 284px;
   height: 60px;
   border-radius: 100px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.247);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   font-size: 150%;
+  background-color: white;
 }
 
 .plus-and-less-button {
@@ -25,6 +26,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
 }
 
 .plus-and-less-button:hover {

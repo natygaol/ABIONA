@@ -42,7 +42,7 @@ class TripsController < ApplicationController
     # 2 generate trip stops and its activities
       # a. find respective sample itinery
       sample_itinerary = SampleItinerary.find(params[:sample_itinerary_id])
-      trip.update(sample_itinerary: sample_itinerary)
+      trip.update(sample_itinerary: sample_itinerary, children_price: sample_itinerary.children_price_per_night, adult_price: sample_itinerary.adult_price_per_night)
       # b. find its stops and iterate over them
       sample_itinerary.stops.each do |stop|
         # c. generating trip stops
