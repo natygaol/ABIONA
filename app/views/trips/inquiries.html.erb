@@ -8,9 +8,10 @@
   <% else %>
   <div class="row d-flex justify-content-between ">
     <% @trips.each do |trip| %>
-      <div class="col-12 col-md-3 mb-5 bg-white shadow px-0 justify-content-center" id="border-radius-inquirie">
-      <div class=" py-2 d-block text-white text-center shadow" id="sent-card-inquirie">Sent <i class="far fa-smile-wink"></i></div>
-        <%= cl_image_tag trip.sample_itinerary.photo.key, class: "img-fluid shadow" if trip.sample_itinerary && trip.sample_itinerary.photo.attached? %>
+    <div class="col-md-4">
+      <div class="mb-5 bg-white shadow px-0 justify-content-center" id="border-radius-inquirie">
+      <div class="py-2 d-block text-white text-center shadow" id="sent-card-inquirie">Sent <i class="far fa-smile-wink"></i></div>
+        <%= cl_image_tag trip.sample_itinerary.photo.key, class: "img-fluid shadow heigth-inquirie-image" if trip.sample_itinerary && trip.sample_itinerary.photo.attached? %>
         <div class="py-3 text-left mx-5">
           <p class="m-2"><strong>Start date:</strong> <%= (trip.start_date).strftime("%B %d") %></p>
           <p class="m-2"><strong>Total nights:</strong> <%= trip.total_nights %></p>
@@ -19,6 +20,7 @@
           <p class="m-2"><strong>Number of Children:</strong> <%= trip.children %></p>
         </div>
       </div>
+    </div>
     <% end %> 
   </div>
   <% end %>
