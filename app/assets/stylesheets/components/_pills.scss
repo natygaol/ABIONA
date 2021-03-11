@@ -9,21 +9,31 @@
 
 .tag-selector + label {
   cursor: pointer;
-  display: inline-block;
+  display: flex;
   font-size: 150%;
   border-radius: 10px;
   padding: 30px 70px;
   background-color: #f4f4f4;
   color: #07070cb7;
-  border: 1px solid #00000027;
   margin-right: 0.6rem;
   margin-bottom: 0.4rem;
-  opacity: .6;
+  opacity: .5;
+  align-items: center;
+  align-content: center;
+  height: 120px;
+  width: 100%;
+  justify-content: center;
 }
 
 .tag-selector:checked + label {
   background-color: #343232;
   opacity: 1;
+  box-shadow: 0 3px 5px 2px rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(18, 230, 46, 0.829);
 }
 
+fieldset.trip_travel_styles {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
 
