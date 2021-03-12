@@ -11,10 +11,6 @@ a:hover {
 .five-stars {
   font-size: 64px;
   color: white;
-
-  // :hover {
-  //   color: green;
-  // }
 }
 
 .container-banner-midpage {
@@ -58,3 +54,9 @@ a:hover {
     position: absolute;
     top: 45%;
   }
+
+@media(max-width: 450px) {
+  .five-stars {
+    font-size: 48px;
+  }
+}

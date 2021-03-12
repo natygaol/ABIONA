@@ -13,12 +13,24 @@
   #sample-itinerario-card-product {
     height: unset;
     flex-direction: column;
+    
     img {
       height: 100px;
       width: 100%;
       object-fit: cover;
     }
-  }  
+  }
+  .ruta {
+    display: none;
+  }
+
+  .boton-customize {
+    margin-bottom: 24px;
+  }
+
+  .container-grupo-abajo {
+    justify-content: center;
+  }
 }
 
 #sample-itinerario-card-product img {
