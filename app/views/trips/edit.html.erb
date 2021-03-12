@@ -10,15 +10,16 @@
 </style>
 
 <div class="container text-center p-3">
-	<h1 class="pt-3 pb-5">What kind of trip are you looking for?</h1>
+	<h1 class="pt-3 pb-2">What kind of trip are you looking for?</h1>
+  <h3 class="text-secondary pb-3">Select one or more styles</h3>
 	<%= simple_form_for @trip do |t| %>
-	<%= t.association :travel_styles, 
-										as: :check_boxes,
-										legend_tag: false,
-										input_html: { class: "tag-selector" },
-										item_wrapper_class: "tag-item",
-										item_label_class: ""
-										 %> 
+  	<%= t.association :travel_styles, 
+  										as: :check_boxes,
+  										legend_tag: false,
+  										input_html: { class: "tag-selector" },
+  										item_wrapper_class: "tag-item",
+  										item_label_class: ""
+  										 %> 
 		<div class="p-5">
 			<%= link_to  "Back", root_path, class: "btn btn-outline-secondary mr-md-5" %>
 			<%= t.submit "Next", :class => "btn btn-primary ml-md-5" %>

@@ -23,3 +23,9 @@
     padding: 14px 8px 0px 0px;
   }
 }
+
+@media(max-width: 450px) {
+  #footer-text {
+    display:none;
+  }
+}
