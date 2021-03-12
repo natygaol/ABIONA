@@ -1,5 +1,5 @@
 class Trip < ApplicationRecord
-  belongs_to :user, required: false
+  belongs_to :user
   belongs_to :sample_itinerary, optional: true
   has_many :trip_stops
   has_many :trip_styles

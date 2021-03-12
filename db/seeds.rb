@@ -7,12 +7,16 @@ require_relative 'seeds/stops'
 require_relative 'seeds/travel_styles'
 
 puts "Clearing database"
-TripStyle.destroy_all
-SampleItineraryTravelStyle.destroy_all
-SampleItinerary.destroy_all
-Accommodation.destroy_all
-Stop.destroy_all
+TripStopActivity.destroy_all
+TripStop.destroy_all
 Activity.destroy_all
+SampleItineraryTravelStyle.destroy_all
+TripStyle.destroy_all
+TravelStyle.destroy_all
+Stop.destroy_all
+Accommodation.destroy_all
+Trip.destroy_all
+SampleItinerary.destroy_all
 User.destroy_all
 #revisar los destroy.all
 
